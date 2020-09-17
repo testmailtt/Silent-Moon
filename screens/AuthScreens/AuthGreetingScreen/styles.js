@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { scaleX, scaleY } from 'constants/size';
 
-const FullHeight = Dimensions.get('window').height;
 const FullWidth = Dimensions.get('window').width;
 
 export default StyleSheet.create({
@@ -9,7 +9,7 @@ export default StyleSheet.create({
     overflow: 'hidden',
     alignItems: 'center',
     flex: 5,
-    marginBottom: 10,
+    marginBottom: scaleY * 30,
   },
   backgroundImageStyle: {
     position: 'absolute',
@@ -22,16 +22,16 @@ export default StyleSheet.create({
     flex: 3,
   },
   buttonContainerStyle: {
-    marginBottom: 20,
+    marginBottom: scaleY * 28,
   },
   textContainerStyle: {
     width: FullWidth - 58,
     alignItems: 'center',
     alignSelf: 'center',
-    marginBottom: FullHeight / 20,
+    marginBottom: scaleY * 62,
   },
   titleContainerStyle: {
-    marginBottom: 15,
+    marginBottom: scaleY * 15,
   },
   signInContainerStyle: {
     flexDirection: 'row',

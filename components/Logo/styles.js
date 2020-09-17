@@ -1,11 +1,12 @@
 import { StyleSheet } from 'react-native';
+import { scaleX, scaleY } from 'constants/size';
 
 export default StyleSheet.create({
   logoImageStyle: {
-    height: 30,
-    width: 168,
+    height: scaleY * 30,
+    width: scaleX * 168,
     position: 'absolute',
-    paddingVertical: 50,
+    paddingVertical: scaleY * 50,
     alignSelf: 'center',
   },
 });

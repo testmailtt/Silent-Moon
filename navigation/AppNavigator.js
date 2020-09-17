@@ -11,11 +11,19 @@ const AppNavigator = () => (
       name={screens.auth.auth_greeting.key}
       component={screens.auth.auth_greeting.component}
       options={{ headerShown: false }}
+      initialParams={{
+        auth_signup: screens.auth.auth_signup.key,
+        auth_signin: screens.auth.auth_signin.key,
+      }}
     />
     <Stack.Screen
       name={screens.auth.auth_signin.key}
       component={screens.auth.auth_signin.component}
       options={{ headerShown: false }}
+      initialParams={{
+        auth_signup: screens.auth.auth_signup.key,
+        auth_signin: screens.auth.auth_signin.key,
+      }}
     />
   </Stack.Navigator>
 );

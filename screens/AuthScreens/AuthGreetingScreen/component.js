@@ -7,13 +7,11 @@ import { Logo } from 'components/Logo';
 import { Button } from 'components/Button';
 import ScreenLayout from 'components/ScreenLayout';
 
-import screens from 'navigation/screens';
-
 import styles from './styles';
 
 type Props = {};
 
-const AuthGreetingScreen = (props: Props) => (
+const AuthGreetingScreen = ({ navigation, route, ...props }: Props) => (
   <ScreenLayout>
     <StatusBar hidden />
     <View style={styles.backgroundImageContainerStyle}>
@@ -39,9 +37,7 @@ const AuthGreetingScreen = (props: Props) => (
       <View>
         <Button
           title="sign up"
-          onPress={() =>
-            props.navigation.navigate(screens.auth.auth_signup.key)
-          }
+          onPress={() => navigation.navigate(route.params.auth_signup)}
           style={styles.buttonContainerStyle}
         />
         <View style={styles.signInContainerStyle}>
@@ -55,9 +51,7 @@ const AuthGreetingScreen = (props: Props) => (
             ALREADY HAVE AN ACCOUNT?
           </Text>
           <TouchableOpacity
-            onPress={() =>
-              props.navigation.navigate(screens.auth.auth_signin.key)
-            }
+            onPress={() => navigation.navigate(route.params.auth_signin)}
           >
             <Text
               size="sz14"
