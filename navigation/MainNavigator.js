@@ -31,7 +31,7 @@ const AppNavigator = () => (
       options={{ headerShown: false }}
       initialParams={{
         auth_signup: screens.auth.auth_signup.key,
-        welcome: screens.auth.new_user_modal.key,
+        welcome: screens.auth.new_user_modal.welcome.key,
       }}
     />
   </Stack.Navigator>

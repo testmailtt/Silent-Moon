@@ -12,7 +12,7 @@ type Props = {
 export const Logo = ({ style }: Props) => (
   <Image
     source={require('assets/images/Logo.png')}
-    style={[style, styles.logoImageStyle]}
+    style={[styles.logoImageStyle, style]}
     resizeMode="contain"
   />
 );
@@ -20,7 +20,7 @@ export const Logo = ({ style }: Props) => (
 export const LogoBlue = ({ style }: Props) => (
   <Image
     source={require('assets/images/LogoBlue.png')}
-    style={[style, styles.logoImageStyle]}
+    style={[styles.logoImageStyle, style]}
     resizeMode="contain"
   />
 );

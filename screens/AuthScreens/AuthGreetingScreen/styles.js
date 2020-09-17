@@ -1,7 +1,5 @@
-import { StyleSheet, Dimensions } from 'react-native';
-import { scaleX, scaleY } from 'constants/size';
-
-const FullWidth = Dimensions.get('window').width;
+import { StyleSheet } from 'react-native';
+import { FullWidth, scaleY } from 'constants/size';
 
 export default StyleSheet.create({
   backgroundImageContainerStyle: {

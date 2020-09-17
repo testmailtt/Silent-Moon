@@ -1,8 +1,6 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 import colors from 'constants/colors';
-import { scaleX, scaleY } from 'constants/size';
-
-const FullWidth = Dimensions.get('window').width;
+import { scaleX, scaleY, FullWidth } from 'constants/size';
 
 export default StyleSheet.create({
   errorTextStyle: {

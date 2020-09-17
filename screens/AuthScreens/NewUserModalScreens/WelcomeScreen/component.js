@@ -27,7 +27,12 @@ const WelcomeScreen = (props: Props) => (
       >
         Hi {props.username}, Welcome
       </Text>
-      <Text size="sz30" color="primaryForeground" align="center">
+      <Text
+        size="sz30"
+        color="primaryForeground"
+        align="center"
+        weight="ultraLight"
+      >
         to Silent Moon
       </Text>
     </View>
@@ -50,7 +55,7 @@ const WelcomeScreen = (props: Props) => (
 
     <ButtonWhite
       title="get started"
-      onPress={() => console.log('navigate next')}
+      onPress={() => props.navigation.navigate(props.route.params.topic)}
       style={styles.buttonNextStyle}
     />
   </ScreenLayout>

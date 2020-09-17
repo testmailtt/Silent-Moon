@@ -21,7 +21,7 @@ const connectImages = {
 
 export const Button = ({ title, onPress, style }: Props) => (
   <TouchableOpacity
-    style={[style, styles.buttonContainerStyle]}
+    style={[styles.buttonContainerStyle, style]}
     onPress={onPress}
   >
     <Text
@@ -38,7 +38,7 @@ export const Button = ({ title, onPress, style }: Props) => (
 
 export const ButtonWhite = ({ title, onPress, style }: Props) => (
   <TouchableOpacity
-    style={[style, styles.buttonWhiteContainerStyle]}
+    style={[styles.buttonWhiteContainerStyle, style]}
     onPress={onPress}
   >
     <Text
@@ -56,7 +56,7 @@ export const ButtonWhite = ({ title, onPress, style }: Props) => (
 export const BackButton = ({ navigation, style }: Props) => (
   <TouchableOpacity
     onPress={() => navigation.goBack()}
-    style={[style, styles.backButtonContainerStyle]}
+    style={[styles.backButtonContainerStyle, style]}
   >
     <Image
       source={require('assets/images/Controls/BackButton.png')}
@@ -68,7 +68,7 @@ export const BackButton = ({ navigation, style }: Props) => (
 export const ConnectButton = ({ connectType, style }: Props) => (
   <TouchableOpacity
     onPress={() => console.log('connected')}
-    style={[style, styles.connectButtonContainerStyle]}
+    style={[styles.connectButtonContainerStyle, style]}
   >
     <Image
       source={connectImages[connectType]}

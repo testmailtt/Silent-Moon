@@ -31,6 +31,10 @@ export default StyleSheet.create({
     fontSize: 16,
   },
 
+  sz18: {
+    fontSize: 18,
+  },
+
   sz20: {
     fontSize: 20,
   },

@@ -25,6 +25,7 @@ Text.propTypes = {
   size: PropTypes.oneOf([
     'sz14',
     'sz16',
+    'sz18',
     'sz20',
     'sz24',
     'sz28',
@@ -33,6 +34,7 @@ Text.propTypes = {
   ]),
   color: PropTypes.oneOf(Object.keys(colors)),
   weight: PropTypes.oneOf([
+    'thin',
     'ultraLight',
     'light',
     'regular',

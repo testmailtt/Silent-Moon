@@ -6,5 +6,7 @@ const designHeight = 896;
 const FullWidth = Dimensions.get('window').width;
 const FullHeight = Dimensions.get('window').height;
 
-export const scaleX = FullWidth / designWidth;
-export const scaleY = FullHeight / designHeight;
+const scaleX = FullWidth / designWidth;
+const scaleY = FullHeight / designHeight;
+
+export { FullWidth, FullHeight, scaleX, scaleY };

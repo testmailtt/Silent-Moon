@@ -1,8 +1,6 @@
-import { StyleSheet, Dimensions } from 'react-native';
-import { scaleX, scaleY } from 'constants/size';
+import { StyleSheet } from 'react-native';
+import { scaleX, scaleY, FullWidth } from 'constants/size';
 import colors from 'constants/colors';
-
-const FullWidth = Dimensions.get('window').width;
 
 export default StyleSheet.create({
   backgroundLinesStyle: {

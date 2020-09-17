@@ -3,6 +3,7 @@ import AuthSignInScreen from 'screens/AuthScreens/AuthSignInScreen';
 import AuthSignUpScreen from 'screens/AuthScreens/AuthSignUpScreen';
 
 import WelcomeScreen from 'screens/AuthScreens/NewUserModalScreens/WelcomeScreen';
+import TopicScreen from 'screens/AuthScreens/NewUserModalScreens/TopicScreen';
 
 export default {
   auth: {
@@ -19,8 +20,14 @@ export default {
       component: AuthSignUpScreen,
     },
     new_user_modal: {
-      key: 'WELCOME',
-      component: WelcomeScreen,
+      welcome: {
+        key: 'WELCOME',
+        component: WelcomeScreen,
+      },
+      topic: {
+        key: 'TOPIC',
+        component: TopicScreen,
+      },
     },
   },
 };
