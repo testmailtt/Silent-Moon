@@ -1,5 +1,8 @@
 import AuthGreetingScreen from 'screens/AuthScreens/AuthGreetingScreen';
 import AuthSignInScreen from 'screens/AuthScreens/AuthSignInScreen';
+import AuthSignUpScreen from 'screens/AuthScreens/AuthSignUpScreen';
+
+import WelcomeScreen from 'screens/AuthScreens/NewUserModalScreens/WelcomeScreen';
 
 export default {
   auth: {
@@ -13,7 +16,11 @@ export default {
     },
     auth_signup: {
       key: '_AUTH_SIGNUP',
-      component: () => ({}),
+      component: AuthSignUpScreen,
+    },
+    new_user_modal: {
+      key: 'WELCOME',
+      component: WelcomeScreen,
     },
   },
 };

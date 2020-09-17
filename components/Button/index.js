@@ -36,6 +36,23 @@ export const Button = ({ title, onPress, style }: Props) => (
   </TouchableOpacity>
 );
 
+export const ButtonWhite = ({ title, onPress, style }: Props) => (
+  <TouchableOpacity
+    style={[style, styles.buttonWhiteContainerStyle]}
+    onPress={onPress}
+  >
+    <Text
+      size="sz14"
+      weight="medium"
+      align="center"
+      transform="uppercase"
+      color="black"
+    >
+      {title}
+    </Text>
+  </TouchableOpacity>
+);
+
 export const BackButton = ({ navigation, style }: Props) => (
   <TouchableOpacity
     onPress={() => navigation.goBack()}

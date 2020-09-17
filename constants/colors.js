@@ -4,5 +4,7 @@ export default {
   gray: '#A1A4B2',
   accent: '#8E97FD',
   secondary: '#F2F3F7',
+  primaryForeground: '#FFECCC',
+  secondaryForeground: '#EBEAEC',
   error: '#FA6E5A',
 };

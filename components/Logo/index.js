@@ -16,3 +16,11 @@ export const Logo = ({ style }: Props) => (
     resizeMode="contain"
   />
 );
+
+export const LogoBlue = ({ style }: Props) => (
+  <Image
+    source={require('assets/images/LogoBlue.png')}
+    style={[style, styles.logoImageStyle]}
+    resizeMode="contain"
+  />
+);

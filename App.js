@@ -14,14 +14,14 @@ import React from 'react';
 
 import store from 'redux/store';
 
-import AppNavigator from 'navigation/AppNavigator';
+import RootNavigator from 'navigation/RootNavigator';
 
 const App = () => {
   return (
     <>
       <Provider store={store}>
         <NavigationContainer>
-          <AppNavigator />
+          <RootNavigator />
         </NavigationContainer>
       </Provider>
     </>

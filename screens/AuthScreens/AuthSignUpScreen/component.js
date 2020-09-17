@@ -1,15 +1,9 @@
 //@flow
 import React from 'react';
 import { Formik } from 'formik';
-import {
-  View,
-  StatusBar,
-  Image,
-  KeyboardAvoidingView,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import { View, StatusBar, Image, KeyboardAvoidingView } from 'react-native';
 
-import { SignInSchema } from 'constants/validation';
+import { SignUpSchema } from 'constants/validation';
 
 import { Text } from 'components/Text';
 import { Button, BackButton, ConnectButton } from 'components/Button';
@@ -21,7 +15,7 @@ import styles from './styles';
 
 type Props = {};
 
-const AuthSignInScreen = (props: Props) => (
+const AuthSignUpScreen = (props: Props) => (
   <ScreenLayout>
     <StatusBar hidden />
 
@@ -33,7 +27,7 @@ const AuthSignInScreen = (props: Props) => (
 
     <View style={styles.bodyContainerStyle}>
       <Text size="sz28" weight="heavy" align="center" style={styles.titleStyle}>
-        Welcome Back!
+        Create your account
       </Text>
       <ConnectButton
         connectType="facebook"
@@ -56,9 +50,9 @@ const AuthSignInScreen = (props: Props) => (
       <DismissKeyboardView>
         <View style={styles.formContainerStyle}>
           <Formik
-            initialValues={{ email: '', password: '' }}
+            initialValues={{ username: '', email: '', password: '' }}
             onSubmit={(values) => console.log(values)}
-            validationSchema={SignInSchema}
+            validationSchema={SignUpSchema}
           >
             {({
               handleChange,
@@ -69,6 +63,17 @@ const AuthSignInScreen = (props: Props) => (
               touched,
             }) => (
               <View>
+                <Input
+                  name="username"
+                  handleChange={handleChange}
+                  handleBlur={handleBlur}
+                  values={values}
+                  placeholder="Your name"
+                  errors={errors}
+                  touched={touched}
+                  style={styles.emailContainerStyle}
+                />
+
                 <Input
                   name="email"
                   handleChange={handleChange}
@@ -93,38 +98,19 @@ const AuthSignInScreen = (props: Props) => (
                 />
 
                 <Button
-                  onPress={handleSubmit}
-                  title="log in"
+                  onPress={() =>
+                    props.navigation.navigate(props.route.params.welcome)
+                  }
+                  title="get started"
                   style={styles.submitButtonStyle}
                 />
-
-                <TouchableWithoutFeedback>
-                  <Text size="sz14" weight="medium" align="center">
-                    Forgot Password?
-                  </Text>
-                </TouchableWithoutFeedback>
               </View>
             )}
           </Formik>
         </View>
       </DismissKeyboardView>
     </KeyboardAvoidingView>
-    <View style={styles.forgotContainerStyle}>
-      <Text size="sz14" weight="medium" color="gray">
-        ALREADY HAVE AN ACCOUNT?
-      </Text>
-      <TouchableWithoutFeedback
-        onPress={() =>
-          props.navigation.navigate(props.route.params.auth_signup)
-        }
-      >
-        <Text size="sz14" weight="medium" color="accent">
-          {' '}
-          SIGN UP
-        </Text>
-      </TouchableWithoutFeedback>
-    </View>
   </ScreenLayout>
 );
 
-export default AuthSignInScreen;
+export default AuthSignUpScreen;

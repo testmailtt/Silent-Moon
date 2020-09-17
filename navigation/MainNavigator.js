@@ -25,6 +25,15 @@ const AppNavigator = () => (
         auth_signin: screens.auth.auth_signin.key,
       }}
     />
+    <Stack.Screen
+      name={screens.auth.auth_signup.key}
+      component={screens.auth.auth_signup.component}
+      options={{ headerShown: false }}
+      initialParams={{
+        auth_signup: screens.auth.auth_signup.key,
+        welcome: screens.auth.new_user_modal.key,
+      }}
+    />
   </Stack.Navigator>
 );
 

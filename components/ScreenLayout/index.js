@@ -11,7 +11,7 @@ type Props = {
 };
 
 const ScreenLayout = ({ style, children }: Props) => (
-  <View style={[style, styles.ScreenLayoutStyle]}>{children}</View>
+  <View style={[styles.ScreenLayoutStyle, style]}>{children}</View>
 );
 
 export const ScreenLayoutSafe = ({ style, children }: Props) => (

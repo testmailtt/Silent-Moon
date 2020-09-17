@@ -13,6 +13,14 @@ export default StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
   },
+  buttonWhiteContainerStyle: {
+    width: FullWidth - 40,
+    height: scaleY * 63,
+    backgroundColor: colors.secondaryForeground,
+    borderRadius: 38,
+    alignSelf: 'center',
+    justifyContent: 'center',
+  },
   backButtonContainerStyle: {
     paddingVertical: scaleY * 50,
     paddingHorizontal: 20,
