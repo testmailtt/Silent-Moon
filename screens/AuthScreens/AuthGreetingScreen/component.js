@@ -1,6 +1,6 @@
 //@flow
 import React from 'react';
-import { View, StatusBar, Image, TouchableOpacity } from 'react-native';
+import { View, Image, TouchableOpacity } from 'react-native';
 
 import { Text } from 'components/Text';
 import { Logo } from 'components/Logo';

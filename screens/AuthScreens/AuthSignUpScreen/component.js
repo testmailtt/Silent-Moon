@@ -1,7 +1,7 @@
 //@flow
 import React from 'react';
 import { Formik } from 'formik';
-import { View, StatusBar, Image, KeyboardAvoidingView } from 'react-native';
+import { View, Image, KeyboardAvoidingView } from 'react-native';
 
 import { SignUpSchema } from 'constants/validation';
 

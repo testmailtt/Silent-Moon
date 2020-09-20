@@ -7,6 +7,7 @@ import TopicScreen from 'screens/AuthScreens/NewUserModalScreens/TopicScreen';
 import RemindersScreen from 'screens/AuthScreens/NewUserModalScreens/RemindersScreen';
 
 import HomeScreen from 'screens/HomeScreen';
+import SleepScreen from 'screens/SleepScreen';
 
 export default {
   auth: {
@@ -42,6 +43,11 @@ export default {
       name: 'Home',
       key: 'HOME',
       component: HomeScreen,
+    },
+    sleep: {
+      name: 'Sleep',
+      key: 'SLEEP',
+      component: SleepScreen,
     },
   },
 };

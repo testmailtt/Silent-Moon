@@ -1,7 +1,7 @@
 //@flow
 import React from 'react';
 import _ from 'lodash';
-import { View, ScrollView, Image, StatusBar } from 'react-native';
+import { View, ScrollView, Image } from 'react-native';
 
 import { Text } from 'components/Text';
 import { CardTopic } from 'components/Card';

@@ -8,12 +8,12 @@ import styles from './styles';
 
 type Props = {};
 
-const HomeScreen = (props: Props) => {
+const SleepScreen = (props: Props) => {
   return (
     <ScreenLayout>
-      <Text size="sz18">Aaaaaa</Text>
+      <Text size="sz18">123123</Text>
     </ScreenLayout>
   );
 };
 
-export default HomeScreen;
+export default SleepScreen;

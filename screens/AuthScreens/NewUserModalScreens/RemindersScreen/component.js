@@ -1,6 +1,5 @@
 //@flow
 import React from 'react';
-import _ from 'lodash';
 import { View, TouchableOpacity } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
