@@ -23,8 +23,6 @@ type Props = {};
 
 const AuthSignInScreen = (props: Props) => (
   <ScreenLayout>
-    <StatusBar hidden />
-
     <BackButton navigation={props.navigation} />
     <Image
       source={require('assets/images/Auth/BackgroundLines.png')}

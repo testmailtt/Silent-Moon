@@ -14,6 +14,9 @@ export default StyleSheet.create({
     width: scaleX * 259,
     marginBottom: scaleY * 15,
   },
+  headerSubtitleStyle: {
+    width: scaleY * 350,
+  },
   timePickerContainerStyle: {
     backgroundColor: colors.timePickerForeground,
     borderRadius: 20,

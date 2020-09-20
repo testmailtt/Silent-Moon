@@ -1,6 +1,7 @@
 import { StyleSheet, Platform } from 'react-native';
 
 import colors from 'constants/colors';
+import { scaleY } from 'constants/size';
 
 const colorStyles = Object.entries(colors)
   .map(([name, color]) => ({
@@ -24,35 +25,35 @@ export default StyleSheet.create({
   },
 
   sz14: {
-    fontSize: 14,
+    fontSize: Math.round(scaleY * 14 + 0.8),
   },
 
   sz16: {
-    fontSize: 16,
+    fontSize: Math.round(scaleY * 16 + 0.8),
   },
 
   sz18: {
-    fontSize: 18,
+    fontSize: Math.round(scaleY * 18 + 0.8),
   },
 
   sz20: {
-    fontSize: 20,
+    fontSize: Math.round(scaleY * 20 + 0.8),
   },
 
   sz24: {
-    fontSize: 24,
+    fontSize: Math.round(scaleY * 24 + 0.8),
   },
 
   sz28: {
-    fontSize: 28,
+    fontSize: Math.round(scaleY * 28 + 0.8),
   },
 
   sz30: {
-    fontSize: 30,
+    fontSize: Math.round(scaleY * 30 + 0.5),
   },
 
   sz34: {
-    fontSize: 34,
+    fontSize: Math.round(scaleY * 34 + 0.8),
   },
 
   thin: {

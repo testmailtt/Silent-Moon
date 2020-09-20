@@ -1,14 +1,15 @@
-import {createStore, applyMiddleware, compose} from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import chalk from 'chalk';
-import {reactotron} from './reactotron';
-import {middlewares, epicMiddleware} from './middlewares';
+import { reactotron } from './reactotron';
+import { middlewares, epicMiddleware } from './middlewares';
 
 import * as storage from 'entities/storage/state';
+import * as user from 'entities/user/state';
 
-import {createReduxStuff} from 'utils/redux';
+import { createReduxStuff } from 'utils/redux';
 
-const {rootReducer, rootEpic} = createReduxStuff({
-  entities: [storage],
+const { rootReducer, rootEpic } = createReduxStuff({
+  entities: [storage, user],
   reducers: {},
   epics: [],
 });
@@ -16,7 +17,7 @@ const {rootReducer, rootEpic} = createReduxStuff({
 // eslint-disable-next-line no-console
 console.log('✅ ' + chalk.cyan('Store initialized!'));
 console.log(
-  "You're now in " + chalk.underline(process.env.NODE_ENV) + ' mode.',
+  "You're now in " + chalk.underline(process.env.NODE_ENV) + ' mode.'
 );
 
 const store = createStore(
@@ -28,8 +29,8 @@ const store = createStore(
       : (f) => f,
     window.devToolsExtension && process.env.NODE_ENV !== 'production'
       ? window.devToolsExtension()
-      : (f) => f,
-  ),
+      : (f) => f
+  )
 );
 
 epicMiddleware.run(rootEpic);

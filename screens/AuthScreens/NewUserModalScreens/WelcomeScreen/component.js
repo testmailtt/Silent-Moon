@@ -14,8 +14,6 @@ type Props = {};
 
 const WelcomeScreen = (props: Props) => (
   <ScreenLayout style={styles.backgroundContainerStyle}>
-    <StatusBar hidden />
-
     <LogoBlue />
 
     <View style={styles.greetingContainerStyle}>

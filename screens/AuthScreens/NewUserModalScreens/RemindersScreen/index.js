@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from 'react';
-import moment from 'moment';
+import React, { useState } from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
+
+import { fetchAuthAsync } from 'entities/user/state';
 
 import Component from './component';
 
@@ -10,6 +11,10 @@ const RemindersScreen = (props) => {
   const [chosenDates, setChosenDates] = useState([]);
   const [time, setTime] = useState(new Date());
   const dates = ['su', 'm', 't', 'w', 'th', 'f', 's'];
+
+  const setAuth = () => {
+    props.fetchAuth();
+  };
 
   const onChange = (event, selectedTime) => {
     const currentDate = selectedTime || time;
@@ -31,6 +36,7 @@ const RemindersScreen = (props) => {
       chooseDates={chooseDates}
       dates={dates}
       onChange={onChange}
+      setAuth={setAuth}
       {...props}
     />
   );
@@ -38,6 +44,8 @@ const RemindersScreen = (props) => {
 
 const mapStateToProps = (state) => ({});
 
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch) => ({
+  fetchAuth: () => dispatch(fetchAuthAsync()),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(RemindersScreen);

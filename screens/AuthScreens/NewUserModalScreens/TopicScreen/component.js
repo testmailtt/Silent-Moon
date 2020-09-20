@@ -47,8 +47,6 @@ const TopicScreen = ({
 
   return (
     <ScreenLayout>
-      <StatusBar hidden />
-
       <View style={styles.titleContainerStyle}>
         <Text size="sz28" weight="heavy">
           What Brings you

@@ -13,7 +13,6 @@ type Props = {};
 
 const AuthGreetingScreen = ({ navigation, route, ...props }: Props) => (
   <ScreenLayout>
-    <StatusBar hidden />
     <View style={styles.backgroundImageContainerStyle}>
       <Image
         source={require('assets/images/Auth/BackgroundImage.png')}

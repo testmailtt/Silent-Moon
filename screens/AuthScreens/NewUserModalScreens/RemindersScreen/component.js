@@ -1,7 +1,7 @@
 //@flow
 import React from 'react';
 import _ from 'lodash';
-import { View, TouchableOpacity, StatusBar } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 import { Text } from 'components/Text';
@@ -15,19 +15,23 @@ type Props = {};
 const RemindersScreen = ({
   time,
   dates,
+  setAuth,
   chooseDates,
   chosenDates,
   onChange,
 }: Props) => {
   return (
     <ScreenLayout>
-      <StatusBar hidden />
-
       <View style={[styles.headerContainerStyle, styles.upperContainerStyle]}>
         <Text size="sz24" weight="bold" style={styles.headerTitleStyle}>
           What time would you like to meditate?
         </Text>
-        <Text size="sz16" weight="light" color="gray">
+        <Text
+          size="sz16"
+          weight="light"
+          color="gray"
+          style={styles.headerSubtitleStyle}
+        >
           Any time you can choose but We recommend first thing in th morning.
         </Text>
       </View>
@@ -36,6 +40,7 @@ const RemindersScreen = ({
         <DateTimePicker
           mode="time"
           display="spinner"
+          textColor="black"
           value={time}
           is24Hour={true}
           onChange={onChange}
@@ -47,7 +52,12 @@ const RemindersScreen = ({
         <Text size="sz24" weight="bold" style={styles.headerTitleStyle}>
           Which day would you like to meditate?
         </Text>
-        <Text size="sz16" weight="light" color="gray">
+        <Text
+          size="sz16"
+          weight="light"
+          color="gray"
+          style={styles.headerSubtitleStyle}
+        >
           Everyday is best, but we recommend picking at least five.
         </Text>
       </View>
@@ -64,13 +74,9 @@ const RemindersScreen = ({
         ))}
       </View>
 
-      <Button
-        title="save"
-        onPress={() => console.log('saved')}
-        style={styles.saveButtonStyle}
-      />
+      <Button title="save" onPress={setAuth} style={styles.saveButtonStyle} />
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={setAuth}>
         <Text size="sz14" weight="medium" align="center" transform="uppercase">
           no thanks
         </Text>

@@ -7,6 +7,7 @@ export default StyleSheet.create({
     overflow: 'hidden',
     alignItems: 'center',
     flex: 5,
+    marginTop: scaleY * -50,
     marginBottom: scaleY * 30,
   },
   backgroundImageStyle: {

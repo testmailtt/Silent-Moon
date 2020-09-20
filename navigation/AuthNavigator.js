@@ -5,8 +5,8 @@ import screens from './screens';
 
 const Stack = createStackNavigator();
 
-const AppNavigator = () => (
-  <Stack.Navigator initialRouteName={screens.auth.auth_greeting.key}>
+const AuthNavigator = () => (
+  <Stack.Navigator>
     <Stack.Screen
       name={screens.auth.auth_greeting.key}
       component={screens.auth.auth_greeting.component}
@@ -37,4 +37,4 @@ const AppNavigator = () => (
   </Stack.Navigator>
 );
 
-export default AppNavigator;
+export default AuthNavigator;

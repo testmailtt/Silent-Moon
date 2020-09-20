@@ -6,6 +6,8 @@ import WelcomeScreen from 'screens/AuthScreens/NewUserModalScreens/WelcomeScreen
 import TopicScreen from 'screens/AuthScreens/NewUserModalScreens/TopicScreen';
 import RemindersScreen from 'screens/AuthScreens/NewUserModalScreens/RemindersScreen';
 
+import HomeScreen from 'screens/HomeScreen';
+
 export default {
   auth: {
     auth_greeting: {
@@ -33,6 +35,13 @@ export default {
         key: 'REMINDERS',
         component: RemindersScreen,
       },
+    },
+  },
+  app: {
+    home: {
+      name: 'Home',
+      key: 'HOME',
+      component: HomeScreen,
     },
   },
 };
