@@ -20,9 +20,19 @@ export default StyleSheet.create({
     zIndex: -1,
   },
   scrollViewStyle: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    flex: 1,
     paddingHorizontal: scaleX * 20,
     backgroundColor: colors.grayForeground,
+  },
+  innerViewStyle: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  viewBalanceStyle: {
+    marginTop: -40,
+  },
+  buttonNextContainerStyle: {
+    paddingVertical: scaleY * 10,
   },
 });

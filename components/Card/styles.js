@@ -3,19 +3,28 @@ import { scaleX, scaleY } from 'constants/size';
 
 export default StyleSheet.create({
   cardContainerStyle: {
-    height: 210,
-    width: scaleX * 177,
     borderRadius: 10,
     overflow: 'hidden',
     justifyContent: 'space-between',
-    paddingBottom: scaleY * 17,
+    marginBottom: 21,
   },
   cardImageStyle: {
-    width: scaleX * 190,
-    height: 122,
-    left: scaleX * -20,
+    alignSelf: 'center',
+    width: scaleX * 175,
   },
   titleTextStyle: {
     left: scaleX * 15,
+    width: 131,
+    marginBottom: 17,
+  },
+  cardContainerActiveStyle: {
+    opacity: 0.5,
+  },
+  activeIconStyle: {
+    width: 24,
+    height: 24,
+    position: 'absolute',
+    top: scaleY * 10,
+    left: scaleX * 10,
   },
 });

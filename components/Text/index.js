@@ -21,7 +21,7 @@ export const Text = (props) => (
 );
 
 Text.propTypes = {
-  style: PropTypes.object,
+  style: PropTypes.any,
   size: PropTypes.oneOf([
     'sz14',
     'sz16',
