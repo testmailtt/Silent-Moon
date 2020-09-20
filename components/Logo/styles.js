@@ -6,7 +6,7 @@ export default StyleSheet.create({
     height: scaleY * 30,
     width: scaleX * 168,
     position: 'absolute',
-    paddingVertical: scaleY * 50,
+    paddingVertical: scaleY * 70,
     alignSelf: 'center',
   },
 });

@@ -22,7 +22,13 @@ const RootNavigator = () => (
     <RootStack.Screen
       name={screens.auth.new_user_modal.topic.key}
       component={screens.auth.new_user_modal.topic.component}
-      options={{ headerShown: false }}
+      options={{ headerShown: false, gestureEnabled: false }}
+      initialParams={{ reminders: screens.auth.new_user_modal.reminders.key }}
+    />
+    <RootStack.Screen
+      name={screens.auth.new_user_modal.reminders.key}
+      component={screens.auth.new_user_modal.reminders.component}
+      options={{ headerShown: false, gestureEnabled: false }}
     />
   </RootStack.Navigator>
 );

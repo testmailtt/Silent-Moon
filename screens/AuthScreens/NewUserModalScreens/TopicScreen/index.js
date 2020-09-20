@@ -8,8 +8,7 @@ import { cardsColor } from 'constants/colors';
 import Component from './component';
 
 const TopicScreen = (props) => {
-  const [isStateUpdated, setStateUpdate] = useState(false);
-  const [chosenTopic, setTopicChosen] = useState();
+  const [chosenTopic, setTopicChosen] = useState([]);
   const [topicCards] = useState([
     {
       title: 'Reduce stress',
@@ -50,22 +49,16 @@ const TopicScreen = (props) => {
   ]);
 
   const chooseTopic = (cardTitle) => {
-    let newTopicCollection = chosenTopic || {};
-
-    if (newTopicCollection[cardTitle]) {
-      delete newTopicCollection[cardTitle];
+    if (!chosenTopic.find((item) => item === cardTitle)) {
+      setTopicChosen(chosenTopic.concat(cardTitle));
     } else {
-      newTopicCollection[cardTitle] = true;
+      setTopicChosen(_.remove(chosenTopic, (item) => item !== cardTitle));
     }
-
-    setStateUpdate(!isStateUpdated);
-    setTopicChosen(newTopicCollection);
   };
 
   return (
     <Component
       topicCards={topicCards}
-      isStateUpdated={isStateUpdated}
       chosenTopic={chosenTopic}
       chooseTopic={chooseTopic}
       {...props}

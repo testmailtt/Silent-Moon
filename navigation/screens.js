@@ -4,6 +4,7 @@ import AuthSignUpScreen from 'screens/AuthScreens/AuthSignUpScreen';
 
 import WelcomeScreen from 'screens/AuthScreens/NewUserModalScreens/WelcomeScreen';
 import TopicScreen from 'screens/AuthScreens/NewUserModalScreens/TopicScreen';
+import RemindersScreen from 'screens/AuthScreens/NewUserModalScreens/RemindersScreen';
 
 export default {
   auth: {
@@ -27,6 +28,10 @@ export default {
       topic: {
         key: 'TOPIC',
         component: TopicScreen,
+      },
+      reminders: {
+        key: 'REMINDERS',
+        component: RemindersScreen,
       },
     },
   },

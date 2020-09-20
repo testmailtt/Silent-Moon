@@ -1,5 +1,5 @@
 //@flow
-import React, { useEffect } from 'react';
+import React from 'react';
 import _ from 'lodash';
 import { View, ScrollView, Image, StatusBar } from 'react-native';
 
@@ -16,7 +16,13 @@ type Props = {};
 
 let cardCurrentIndex = 0;
 
-const TopicScreen = ({ topicCards, chosenTopic, chooseTopic }: Props) => {
+const TopicScreen = ({
+  navigation,
+  topicCards,
+  route,
+  chosenTopic,
+  chooseTopic,
+}: Props) => {
   const renderCards = (card, index) => {
     cardCurrentIndex = index % 4 === 0 ? 0 : cardCurrentIndex;
     const displayFlag = cardCurrentIndex % 1.5 === 0;
@@ -27,7 +33,7 @@ const TopicScreen = ({ topicCards, chosenTopic, chooseTopic }: Props) => {
         key={card.title}
         card={card}
         isLong={displayFlag}
-        isActive={chosenTopic ? chosenTopic[card.title] : false}
+        isActive={chosenTopic.find((item) => item === card.title)}
         onPress={() => chooseTopic(card.title)}
         style={[
           cardCurrentIndex - 1 !== 0 && displayFlag && styles.viewBalanceStyle,
@@ -76,7 +82,7 @@ const TopicScreen = ({ topicCards, chosenTopic, chooseTopic }: Props) => {
         <View style={styles.buttonNextContainerStyle}>
           <Button
             title="Next"
-            onPress={() => console.log('goNext')}
+            onPress={() => navigation.navigate(route.params.reminders)}
             style={styles.buttonNextStyle}
           />
         </View>

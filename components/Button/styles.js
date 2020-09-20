@@ -37,4 +37,17 @@ export default StyleSheet.create({
     width: FullWidth - 40,
     height: scaleX * 63,
   },
+  dateContainerStyle: {
+    width: 40,
+    height: 40,
+    borderRadius: 50,
+    borderWidth: 1,
+    borderColor: colors.gray,
+    justifyContent: 'center',
+  },
+  dateContainerActiveStyle: {
+    borderWidth: 0,
+    backgroundColor: colors.black,
+    color: colors.white,
+  },
 });

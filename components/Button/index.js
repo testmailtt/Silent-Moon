@@ -1,7 +1,9 @@
 //@flow
 import React, { type Node } from 'react';
 import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
-import { TouchableOpacity, Image } from 'react-native';
+import { TouchableOpacity, TouchableHighlight, Image } from 'react-native';
+
+import colors from 'constants/colors';
 import { Text } from 'components/Text';
 
 import styles from './styles';
@@ -76,4 +78,26 @@ export const ConnectButton = ({ connectType, style }: Props) => (
       resizeMode="contain"
     />
   </TouchableOpacity>
+);
+
+export const DateButton = ({ title, onPress, isActive, style }) => (
+  <TouchableHighlight
+    onPress={onPress}
+    underlayColor={colors.secondaryForeground}
+    style={[
+      style,
+      styles.dateContainerStyle,
+      isActive && styles.dateContainerActiveStyle,
+    ]}
+  >
+    <Text
+      size="sz14"
+      weight="medium"
+      color={isActive ? 'white' : 'gray'}
+      transform="uppercase"
+      align="center"
+    >
+      {title}
+    </Text>
+  </TouchableHighlight>
 );

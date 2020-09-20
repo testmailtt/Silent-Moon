@@ -33,6 +33,7 @@ export default StyleSheet.create({
     marginTop: -40,
   },
   buttonNextContainerStyle: {
-    paddingVertical: scaleY * 10,
+    paddingTop: scaleY * 10,
+    paddingBottom: scaleY * 40,
   },
 });
