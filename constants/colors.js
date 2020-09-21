@@ -9,6 +9,10 @@ export default {
   error: '#FA6E5A',
   grayForeground: '#fbfaf7',
   timePickerForeground: '#f5f5f9',
+  lightSalmon: '#FFC97E',
+  darkGray: '#333242',
+  lightGreen: '#84C6AE',
+  lightYellow: '#FEDEA5',
 };
 
 export const cardsColor = {

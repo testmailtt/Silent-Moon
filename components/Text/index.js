@@ -23,6 +23,8 @@ export const Text = (props) => (
 Text.propTypes = {
   style: PropTypes.any,
   size: PropTypes.oneOf([
+    'sz11',
+    'sz12',
     'sz14',
     'sz16',
     'sz18',

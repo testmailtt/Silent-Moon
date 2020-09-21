@@ -63,7 +63,11 @@ export const TabBarView = ({ state, descriptors, navigation }) => {
         return (
           <TouchableHighlight
             key={route.name}
-            style={styles.tabBarButtonContainerStyle}
+            style={[
+              styles.tabBarButtonContainerStyle,
+              index !== state.routes.length - 1 &&
+                styles.tabBarSpaceBetweenStyle,
+            ]}
             onPress={onPress}
             underlayColor="transparent"
           >

@@ -1,7 +1,7 @@
 //@flow
 import React, { type Node } from 'react';
 import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
-import { SafeAreaView, View } from 'react-native';
+import { SafeAreaView, ScrollView, View } from 'react-native';
 
 import styles from './styles';
 
@@ -12,6 +12,10 @@ type Props = {
 
 const ScreenLayout = ({ style, children }: Props) => (
   <View style={[styles.ScreenLayoutStyle, style]}>{children}</View>
+);
+
+export const ScreenLayoutScroll = ({ style, children }: Props) => (
+  <ScrollView style={[styles.ScreenLayoutStyle, style]}>{children}</ScrollView>
 );
 
 export const ScreenLayoutSafe = ({ style, children }: Props) => (

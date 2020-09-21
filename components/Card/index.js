@@ -5,6 +5,9 @@ import { Image, TouchableOpacity, View } from 'react-native';
 
 import { Text } from 'components/Text';
 
+import colors from 'constants/colors';
+import { scaleX, scaleY } from 'constants/size';
+
 import styles from './styles';
 
 type Props = {
@@ -61,3 +64,125 @@ export const CardTopic = ({
     </TouchableOpacity>
   );
 };
+
+export const CardCourse = ({ card, onPress, style }) => (
+  <View
+    style={[
+      styles.cardCourseContainerStyle,
+      { backgroundColor: colors[card.backgroundColor] },
+      style,
+    ]}
+  >
+    <Image
+      source={card.icon}
+      style={[
+        styles.cardCourseImageStyle,
+        { width: scaleX * card.imageWidth, height: scaleY * card.imageHeight },
+      ]}
+    />
+    <View style={styles.cardCourseHeaderContainerStyle}>
+      <Text size="sz18" weight="heavy" color={card.fontColor}>
+        {card.title}
+      </Text>
+      <Text
+        size="sz11"
+        weight="medium"
+        color={card.fontColor}
+        transform="uppercase"
+      >
+        {card.type}
+      </Text>
+    </View>
+
+    <View style={styles.cardCourseFooterContainerStyle}>
+      <Text
+        size="sz11"
+        weight="medium"
+        transform="uppercase"
+        color={card.fontColor}
+      >
+        {card.length}
+      </Text>
+
+      <TouchableOpacity
+        onPress={onPress}
+        style={[
+          styles.cardCourseButtonStyle,
+          { backgroundColor: colors[card.fontColor] },
+        ]}
+      >
+        <Text
+          size="sz12"
+          transform="uppercase"
+          weight="medium"
+          color={card.buttonFontColor}
+        >
+          start
+        </Text>
+      </TouchableOpacity>
+    </View>
+  </View>
+);
+
+export const CardMusic = ({ card, onPress, style }) => (
+  <View
+    style={[
+      styles.cardMusicContainerStyle,
+      { backgroundColor: colors[card.backgroundColor] },
+      style,
+    ]}
+  >
+    <Image source={card.icon} style={styles.cardMusicImageStyle} />
+    <View style={styles.cardMusicHeaderContainerStyle}>
+      <Text
+        size="sz18"
+        weight="heavy"
+        color={card.fontColor}
+        style={styles.cardMusicTitleContainerStyle}
+      >
+        {card.title}
+      </Text>
+      <Text
+        size="sz11"
+        weight="medium"
+        color={card.fontColor}
+        transform="uppercase"
+      >
+        {card.type} · {card.length}
+      </Text>
+    </View>
+
+    <TouchableOpacity onPress={onPress}>
+      <Image
+        source={require('assets/images/Controls/PlayButton.png')}
+        style={styles.playButtonImageStyle}
+      />
+    </TouchableOpacity>
+  </View>
+);
+
+export const CardRecommended = ({ card, onPress, style }) => (
+  <TouchableOpacity
+    onPress={onPress}
+    style={[styles.cardRecommendedContainerStyle, style]}
+  >
+    <Image
+      source={card.image}
+      style={[
+        { backgroundColor: colors[card.backgroundColor] },
+        styles.cardRecommendedImageStyle,
+      ]}
+    />
+
+    <Text
+      size="sz18"
+      weight="heavy"
+      style={styles.cardRecommendedTitleContainerStyle}
+    >
+      {card.title}
+    </Text>
+    <Text size="sz11" weight="medium" transform="uppercase" color="gray">
+      {card.type} · {card.length}
+    </Text>
+  </TouchableOpacity>
+);

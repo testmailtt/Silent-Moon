@@ -36,6 +36,8 @@ export default StyleSheet.create({
     alignItems: 'center',
     height: scaleY * 66,
     justifyContent: 'space-between',
+  },
+  tabBarSpaceBetweenStyle: {
     marginRight: scaleX * 30,
   },
 });

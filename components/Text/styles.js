@@ -24,6 +24,14 @@ export default StyleSheet.create({
     fontFamily: 'HelveticaNeue',
   },
 
+  sz11: {
+    fontSize: Math.round(scaleY * 11 + 0.8),
+  },
+
+  sz12: {
+    fontSize: Math.round(scaleY * 12 + 0.8),
+  },
+
   sz14: {
     fontSize: Math.round(scaleY * 14 + 0.8),
   },
