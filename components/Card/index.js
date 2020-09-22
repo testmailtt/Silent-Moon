@@ -197,7 +197,7 @@ const CardMeditate = ({ card, isLong, onPress, style }) => (
       styles.cardCourseContainerStyle,
       {
         height: isLong ? 210 : 170,
-        marginBottom: 10,
+        marginBottom: scaleY * 20,
       },
       style,
     ]}
