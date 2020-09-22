@@ -34,6 +34,9 @@ export default StyleSheet.create({
     width: FullWidth - 40,
     height: scaleX * 63,
   },
+  filterButtonContainerStyle: {
+    flexDirection: 'column',
+  },
   dateContainerStyle: {
     width: 40,
     height: 40,
@@ -46,5 +49,21 @@ export default StyleSheet.create({
     borderWidth: 0,
     backgroundColor: colors.black,
     color: colors.white,
+  },
+  filterIconStyle: {
+    width: scaleX * 25,
+    height: scaleY * 25,
+  },
+  filterIconContainerStyle: {
+    width: scaleY * 65,
+    height: scaleY * 65,
+    borderRadius: scaleX * 25,
+    backgroundColor: colors.gray,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: scaleY * 10,
+  },
+  filterIconContainerActiveStyle: {
+    backgroundColor: colors.accent,
   },
 });

@@ -8,6 +8,7 @@ import RemindersScreen from 'screens/AuthScreens/NewUserModalScreens/RemindersSc
 
 import HomeScreen from 'screens/HomeScreen';
 import SleepScreen from 'screens/SleepScreen';
+import MeditateScreen from 'screens/MeditateScreen';
 
 import CourseScreen from 'screens/CourseScreen';
 
@@ -55,6 +56,11 @@ export default {
       name: 'Course',
       key: 'COURSE',
       component: CourseScreen,
+    },
+    meditate: {
+      name: 'Meditate',
+      key: 'MEDITATE',
+      component: MeditateScreen,
     },
   },
 };

@@ -71,7 +71,10 @@ export default StyleSheet.create({
     borderTopLeftRadius: 2,
     borderTopRightRadius: 2,
   },
-  tabHeaderSpaceStyle: {
+  tabHeaderSpaceStyle: {},
+  tabHeaderInlineStyle: {
+    flexDirection: 'column',
+    alignItems: 'center',
     marginRight: scaleX * 74,
   },
   dividerStyle: {

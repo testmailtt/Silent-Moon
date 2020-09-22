@@ -92,4 +92,17 @@ export default StyleSheet.create({
   cardRecommendedTitleContainerStyle: {
     marginBottom: scaleY * 6,
   },
+  cardMeditateImageStyle: {
+    width: '100%',
+    height: '100%',
+  },
+  cardMeditateHeaderContainerStyle: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    height: scaleY * 52,
+    zIndex: 10,
+    justifyContent: 'center',
+    paddingLeft: scaleX * 15,
+  },
 });

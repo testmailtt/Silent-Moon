@@ -25,6 +25,11 @@ const TabNavigator = () => (
       component={screens.app.sleep.component}
       options={{ headerShown: false }}
     />
+    <TabStack.Screen
+      name={screens.app.meditate.name}
+      component={screens.app.meditate.component}
+      options={{ headerShown: false }}
+    />
   </TabStack.Navigator>
 );
 

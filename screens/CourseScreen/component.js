@@ -1,6 +1,6 @@
 //@flow
 import React from 'react';
-import { Image, View, ScrollView, TouchableOpacity } from 'react-native';
+import { Image, View, ScrollView, TouchableNativeFeedback } from 'react-native';
 
 import { BackButton, LikeButton, DownloadButton } from 'components/Button';
 import { Text } from 'components/Text';
@@ -16,16 +16,12 @@ const renderPlayersCard = (playerCollections) => {
   return (
     <>
       {playerCollections.map((item, index) => (
-        <>
-          <PlayerCard
-            key={item.title}
-            title={item.title}
-            length={item.length}
-          />
+        <View key={item.title}>
+          <PlayerCard title={item.title} length={item.length} />
           {index !== playerCollections.length - 1 && (
             <View style={styles.playerDividerStyle} />
           )}
-        </>
+        </View>
       ))}
     </>
   );
@@ -106,44 +102,45 @@ const CourseScreen = ({
 
         <View>
           <View style={styles.tabHeaderContainerStyle}>
-            <TouchableOpacity
-              style={[
-                activeTab === 0 && styles.tabHeaderButtonActiveStyle,
-                styles.tabHeaderSpaceStyle,
-              ]}
+            <TouchableNativeFeedback
+              style={activeTab === 0 && styles.tabHeaderButtonActiveStyle}
               onPress={() => setActiveTab(0)}
             >
-              <Text
-                size="sz16"
-                weight="medium"
-                color={activeTab === 0 ? 'accent' : 'gray'}
-                transform="uppercase"
-                style={activeTab === 0 && styles.tabHeaderTitleActiveStyle}
-              >
-                male voice
-              </Text>
-              {activeTab === 0 && (
-                <View style={styles.tabHeaderBorderBottomStyle} />
-              )}
-            </TouchableOpacity>
+              <View style={styles.tabHeaderInlineStyle}>
+                <Text
+                  size="sz16"
+                  weight="medium"
+                  color={activeTab === 0 ? 'accent' : 'gray'}
+                  transform="uppercase"
+                  style={activeTab === 0 && styles.tabHeaderTitleActiveStyle}
+                >
+                  male voice
+                </Text>
+                {activeTab === 0 && (
+                  <View style={styles.tabHeaderBorderBottomStyle} />
+                )}
+              </View>
+            </TouchableNativeFeedback>
 
-            <TouchableOpacity
+            <TouchableNativeFeedback
               style={activeTab === 1 && styles.tabHeaderButtonActiveStyle}
               onPress={() => setActiveTab(1)}
             >
-              <Text
-                size="sz16"
-                weight="medium"
-                color={activeTab === 1 ? 'accent' : 'gray'}
-                transform="uppercase"
-                style={activeTab === 1 && styles.tabHeaderTitleActiveStyle}
-              >
-                female voice
-              </Text>
-              {activeTab === 1 && (
-                <View style={styles.tabHeaderBorderBottomStyle} />
-              )}
-            </TouchableOpacity>
+              <View style={styles.tabHeaderInlineStyle}>
+                <Text
+                  size="sz16"
+                  weight="medium"
+                  color={activeTab === 1 ? 'accent' : 'gray'}
+                  transform="uppercase"
+                  style={activeTab === 1 && styles.tabHeaderTitleActiveStyle}
+                >
+                  female voice
+                </Text>
+                {activeTab === 1 && (
+                  <View style={styles.tabHeaderBorderBottomStyle} />
+                )}
+              </View>
+            </TouchableNativeFeedback>
           </View>
           <View style={styles.dividerStyle} />
 

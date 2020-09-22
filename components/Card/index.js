@@ -2,6 +2,7 @@
 import React, { type Node } from 'react';
 import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 import { Image, TouchableOpacity, View } from 'react-native';
+import { BlurView } from '@react-native-community/blur';
 
 import { Text } from 'components/Text';
 
@@ -14,7 +15,7 @@ type Props = {
   style?: ViewStyleProp,
 };
 
-export const CardTopic = ({
+const CardTopic = ({
   card,
   isLong,
   isActive,
@@ -65,7 +66,7 @@ export const CardTopic = ({
   );
 };
 
-export const CardCourse = ({ card, onPress, style }) => (
+const CardCourse = ({ card, onPress, style }) => (
   <View
     style={[
       styles.cardCourseContainerStyle,
@@ -125,7 +126,7 @@ export const CardCourse = ({ card, onPress, style }) => (
   </View>
 );
 
-export const CardMusic = ({ card, onPress, style }) => (
+const CardMusic = ({ card, onPress, style }) => (
   <View
     style={[
       styles.cardMusicContainerStyle,
@@ -162,7 +163,7 @@ export const CardMusic = ({ card, onPress, style }) => (
   </View>
 );
 
-export const CardRecommended = ({ card, onPress, style }) => (
+const CardRecommended = ({ card, onPress, style }) => (
   <TouchableOpacity
     onPress={onPress}
     style={[styles.cardRecommendedContainerStyle, style]}
@@ -188,3 +189,35 @@ export const CardRecommended = ({ card, onPress, style }) => (
     </Text>
   </TouchableOpacity>
 );
+
+const CardMeditate = ({ card, isLong, onPress, style }) => (
+  <TouchableOpacity
+    onPress={onPress}
+    style={[
+      styles.cardCourseContainerStyle,
+      {
+        height: isLong ? 210 : 170,
+        marginBottom: 10,
+      },
+      style,
+    ]}
+  >
+    <Image
+      source={card.image}
+      style={styles.cardMeditateImageStyle}
+      resizeMode="cover"
+    />
+    <BlurView
+      style={styles.cardMeditateHeaderContainerStyle}
+      blurType="chromeMaterialLight"
+      blurAmount={20}
+      reducedTransparencyFallbackColor="white"
+    >
+      <Text size="sz18" weight="heavy" color="white">
+        {card.title}
+      </Text>
+    </BlurView>
+  </TouchableOpacity>
+);
+
+export { CardTopic, CardCourse, CardMusic, CardRecommended, CardMeditate };

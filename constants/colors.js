@@ -15,6 +15,7 @@ export default {
   lightYellow: '#FEDEA5',
   lightAccent: '#E4E6FD',
   accentForeground: '#ADB8D9',
+  calm: '#f4dccd',
 };
 
 export const cardsColor = {

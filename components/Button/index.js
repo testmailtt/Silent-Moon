@@ -1,10 +1,17 @@
 //@flow
 import React, { type Node } from 'react';
 import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
-import { TouchableOpacity, TouchableHighlight, Image } from 'react-native';
+import {
+  TouchableOpacity,
+  TouchableHighlight,
+  Image,
+  View,
+} from 'react-native';
 
 import colors from 'constants/colors';
 import { Text } from 'components/Text';
+
+import { TouchableNativeFeedback } from 'react-native-gesture-handler';
 
 import styles from './styles';
 
@@ -127,4 +134,31 @@ export const DateButton = ({ title, onPress, isActive, style }) => (
       {title}
     </Text>
   </TouchableHighlight>
+);
+
+export const FilterButton = ({ title, icon, onPress, isActive, style }) => (
+  <TouchableNativeFeedback onPress={onPress}>
+    <View style={[style, styles.filterButtonContainerStyle]}>
+      <View
+        style={[
+          styles.filterIconContainerStyle,
+          isActive && styles.filterIconContainerActiveStyle,
+        ]}
+      >
+        <Image
+          source={icon}
+          style={styles.filterIconStyle}
+          resizeMode="center"
+        />
+      </View>
+      <Text
+        size="sz16"
+        weight="medium"
+        align="center"
+        color={isActive ? 'black' : 'gray'}
+      >
+        {title}
+      </Text>
+    </View>
+  </TouchableNativeFeedback>
 );

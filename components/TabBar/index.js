@@ -19,6 +19,11 @@ const TabBarIcon = ({ routeName, isFocused }) => {
         ? require('assets/images/Tab/Active/Sleep.png')
         : require('assets/images/Tab/Inactive/Sleep.png');
       break;
+    case 'Meditate':
+      icon = isFocused
+        ? require('assets/images/Tab/Active/Meditate.png')
+        : require('assets/images/Tab/Inactive/Meditate.png');
+      break;
     default:
       break;
   }
