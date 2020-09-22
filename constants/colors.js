@@ -13,6 +13,8 @@ export default {
   darkGray: '#333242',
   lightGreen: '#84C6AE',
   lightYellow: '#FEDEA5',
+  lightAccent: '#E4E6FD',
+  accentForeground: '#ADB8D9',
 };
 
 export const cardsColor = {

@@ -79,6 +79,7 @@ export const CardCourse = ({ card, onPress, style }) => (
         styles.cardCourseImageStyle,
         { width: scaleX * card.imageWidth, height: scaleY * card.imageHeight },
       ]}
+      resizeMode="contain"
     />
     <View style={styles.cardCourseHeaderContainerStyle}>
       <Text size="sz18" weight="heavy" color={card.fontColor}>
@@ -172,6 +173,7 @@ export const CardRecommended = ({ card, onPress, style }) => (
         { backgroundColor: colors[card.backgroundColor] },
         styles.cardRecommendedImageStyle,
       ]}
+      resizeMode="contain"
     />
 
     <Text

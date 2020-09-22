@@ -9,6 +9,8 @@ import RemindersScreen from 'screens/AuthScreens/NewUserModalScreens/RemindersSc
 import HomeScreen from 'screens/HomeScreen';
 import SleepScreen from 'screens/SleepScreen';
 
+import CourseScreen from 'screens/CourseScreen';
+
 export default {
   auth: {
     auth_greeting: {
@@ -48,6 +50,11 @@ export default {
       name: 'Sleep',
       key: 'SLEEP',
       component: SleepScreen,
+    },
+    course: {
+      name: 'Course',
+      key: 'COURSE',
+      component: CourseScreen,
     },
   },
 };

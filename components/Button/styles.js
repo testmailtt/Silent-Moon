@@ -20,15 +20,12 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   backButtonContainerStyle: {
-    paddingVertical: scaleY * 50,
-    paddingHorizontal: 20,
-    paddingBottom: scaleY * 28,
     zIndex: 10,
     width: scaleX * 55,
   },
   backButtonImageStyle: {
     width: scaleX * 55,
-    height: scaleX * 55,
+    height: scaleY * 55,
   },
   connectButtonContainerStyle: {
     alignSelf: 'center',

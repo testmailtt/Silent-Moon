@@ -25,43 +25,43 @@ export default StyleSheet.create({
   },
 
   sz11: {
-    fontSize: Math.round(scaleY * 11 + 0.8),
+    fontSize: Math.round(scaleY * 11 + 0.6),
   },
 
   sz12: {
-    fontSize: Math.round(scaleY * 12 + 0.8),
+    fontSize: Math.round(scaleY * 12 + 0.6),
   },
 
   sz14: {
-    fontSize: Math.round(scaleY * 14 + 0.8),
+    fontSize: Math.round(scaleY * 14 + 0.6),
   },
 
   sz16: {
-    fontSize: Math.round(scaleY * 16 + 0.8),
+    fontSize: Math.round(scaleY * 16 + 0.6),
   },
 
   sz18: {
-    fontSize: Math.round(scaleY * 18 + 0.8),
+    fontSize: Math.round(scaleY * 18 + 0.6),
   },
 
   sz20: {
-    fontSize: Math.round(scaleY * 20 + 0.8),
+    fontSize: Math.round(scaleY * 20 + 0.6),
   },
 
   sz24: {
-    fontSize: Math.round(scaleY * 24 + 0.8),
+    fontSize: Math.round(scaleY * 24 + 0.6),
   },
 
   sz28: {
-    fontSize: Math.round(scaleY * 28 + 0.8),
+    fontSize: Math.round(scaleY * 28 + 0.6),
   },
 
   sz30: {
-    fontSize: Math.round(scaleY * 30 + 0.5),
+    fontSize: Math.round(scaleY * 30 + 0.6),
   },
 
   sz34: {
-    fontSize: Math.round(scaleY * 34 + 0.8),
+    fontSize: Math.round(scaleY * 34 + 0.6),
   },
 
   thin: {

@@ -63,6 +63,33 @@ export const BackButton = ({ navigation, style }: Props) => (
     <Image
       source={require('assets/images/Controls/BackButton.png')}
       style={styles.backButtonImageStyle}
+      resizeMode="contain"
+    />
+  </TouchableOpacity>
+);
+
+export const LikeButton = ({ onPress, style }: Props) => (
+  <TouchableOpacity
+    onPress={onPress}
+    style={[styles.backButtonContainerStyle, style]}
+  >
+    <Image
+      source={require('assets/images/Controls/Like.png')}
+      style={styles.backButtonImageStyle}
+      resizeMode="contain"
+    />
+  </TouchableOpacity>
+);
+
+export const DownloadButton = ({ onPress, style }: Props) => (
+  <TouchableOpacity
+    onPress={onPress}
+    style={[styles.backButtonContainerStyle, style]}
+  >
+    <Image
+      source={require('assets/images/Controls/Download.png')}
+      style={styles.backButtonImageStyle}
+      resizeMode="contain"
     />
   </TouchableOpacity>
 );

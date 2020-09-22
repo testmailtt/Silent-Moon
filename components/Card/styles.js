@@ -29,7 +29,7 @@ export default StyleSheet.create({
   },
   cardCourseContainerStyle: {
     width: scaleX * 177,
-    height: scaleY * 210,
+    height: 177,
     borderRadius: 10,
     overflow: 'hidden',
     justifyContent: 'space-between',
@@ -79,13 +79,13 @@ export default StyleSheet.create({
     marginBottom: scaleY * 10,
   },
   playButtonImageStyle: {
-    width: scaleX * 40,
-    height: scaleY * 40,
+    width: 40,
+    height: 40,
   },
   cardRecommendedContainerStyle: {},
   cardRecommendedImageStyle: {
     width: scaleX * 162,
-    height: scaleY * 113.5,
+    height: scaleY * 118.5,
     borderRadius: 10,
     marginBottom: scaleY * 10.5,
   },

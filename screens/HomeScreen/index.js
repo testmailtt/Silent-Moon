@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
+import { scaleX, scaleY } from 'constants/size';
+
 import Component from './component';
 
 const HomeScreen = (props) => {

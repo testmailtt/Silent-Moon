@@ -11,7 +11,7 @@ import styles from './styles';
 
 type Props = {};
 
-const HomeScreen = (props: Props) => {
+const HomeScreen = ({ navigation, route, ...props }: Props) => {
   return (
     <ScreenLayoutScroll style={styles.scrollViewContainerStyle}>
       <Logo />
@@ -29,7 +29,11 @@ const HomeScreen = (props: Props) => {
         {props.cards.map(
           (item, index) =>
             index !== props.cards.length - 1 && (
-              <CardCourse key={item.title} card={item} />
+              <CardCourse
+                key={item.title}
+                card={item}
+                onPress={() => navigation.navigate(route.params.course)}
+              />
             )
         )}
         <CardMusic
