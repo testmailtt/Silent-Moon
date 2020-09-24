@@ -8,6 +8,7 @@ export default StyleSheet.create({
     height: scaleY * 112,
     backgroundColor: colors.white,
     flexDirection: 'row',
+    justifyContent: 'space-between',
 
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 3 },
@@ -23,8 +24,8 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   tabBarActiveIconStyle: {
-    width: 46,
-    height: 46,
+    width: scaleX * 46,
+    height: scaleX * 46,
     marginBottom: scaleY * 5,
   },
   tabBarInactiveIconStyle: {
@@ -37,7 +38,5 @@ export default StyleSheet.create({
     height: scaleY * 66,
     justifyContent: 'space-between',
   },
-  tabBarSpaceBetweenStyle: {
-    marginRight: scaleX * 30,
-  },
+  tabBarSpaceBetweenStyle: {},
 });

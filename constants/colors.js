@@ -1,6 +1,7 @@
 export default {
   white: '#ffffff',
   black: '#3F414E',
+  darkBlack: '#1b1c22',
   gray: '#A1A4B2',
   accent: '#8E97FD',
   secondary: '#F2F3F7',
@@ -16,6 +17,9 @@ export default {
   lightAccent: '#E4E6FD',
   accentForeground: '#ADB8D9',
   calm: '#f4dccd',
+  music: '#FAF7F2',
+  border: '#BABCC6',
+  grayPlayer: '#A0A3B1',
 };
 
 export const cardsColor = {

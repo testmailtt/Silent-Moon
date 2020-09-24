@@ -13,11 +13,18 @@ const RootStack = createStackNavigator();
 const RootNavigator = (props) => (
   <RootStack.Navigator mode="modal" screenOptions={{ gestureEnabled: false }}>
     {props.isAuth ? (
-      <RootStack.Screen
-        name="AppNavigator"
-        component={AppNavigator}
-        options={{ headerShown: false }}
-      />
+      <>
+        <RootStack.Screen
+          name="AppNavigator"
+          component={AppNavigator}
+          options={{ headerShown: false }}
+        />
+        <RootStack.Screen
+          name={screens.app.music.name}
+          component={screens.app.music.component}
+          options={{ headerShown: false }}
+        />
+      </>
     ) : (
       <>
         <RootStack.Screen

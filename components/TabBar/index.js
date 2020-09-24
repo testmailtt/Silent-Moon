@@ -1,9 +1,12 @@
 import React from 'react';
 import { TouchableHighlight, View, Image } from 'react-native';
 
+import screens from 'navigation/screens';
+
 import { Text } from 'components/Text';
 
 import styles from './styles';
+import { useState } from 'react';
 
 const TabBarIcon = ({ routeName, isFocused }) => {
   let icon;
@@ -24,6 +27,11 @@ const TabBarIcon = ({ routeName, isFocused }) => {
         ? require('assets/images/Tab/Active/Meditate.png')
         : require('assets/images/Tab/Inactive/Meditate.png');
       break;
+    case 'Music':
+      icon = isFocused
+        ? require('assets/images/Tab/Active/Music.png')
+        : require('assets/images/Tab/Inactive/Music.png');
+      break;
     default:
       break;
   }
@@ -41,8 +49,27 @@ const TabBarIcon = ({ routeName, isFocused }) => {
   );
 };
 
+const ModalMusic = ({ navigation }) => (
+  <TouchableHighlight
+    style={[styles.tabBarButtonContainerStyle]}
+    onPress={() => navigation.navigate(screens.app.music.name)}
+    underlayColor="transparent"
+  >
+    <>
+      <View style={styles.tabBarIconContainerStyle}>
+        <TabBarIcon routeName={'Music'} />
+      </View>
+      <Text size="sz14" weight="medium" color="gray">
+        {screens.app.music.name}
+      </Text>
+    </>
+  </TouchableHighlight>
+);
+
 export const TabBarView = ({ state, descriptors, navigation }) => {
-  const focusedOptions = descriptors[state.routes[state.index].key].options;
+  let routes = state.routes;
+
+  const focusedOptions = descriptors[routes[state.index].key].options;
 
   if (focusedOptions.tabBarVisible === false) {
     return null;
@@ -50,18 +77,22 @@ export const TabBarView = ({ state, descriptors, navigation }) => {
 
   return (
     <View style={styles.tabBarContainerStyle}>
-      {state.routes.map((route, index) => {
+      {routes.map((route, index) => {
         const isFocused = state.index === index;
 
         const onPress = () => {
-          const event = navigation.emit({
-            type: 'tabPress',
-            target: route.key,
-            canPreventDefault: true,
-          });
+          if (route.name !== screens.app.music.name) {
+            const event = navigation.emit({
+              type: 'tabPress',
+              target: route.key,
+              canPreventDefault: true,
+            });
 
-          if (!isFocused && !event.defaultPrevented) {
-            navigation.navigate(route.name);
+            if (!isFocused && !event.defaultPrevented) {
+              navigation.navigate(route.name);
+            }
+          } else {
+            navigation.navigate(screens.app.music.name);
           }
         };
 
@@ -70,8 +101,7 @@ export const TabBarView = ({ state, descriptors, navigation }) => {
             key={route.name}
             style={[
               styles.tabBarButtonContainerStyle,
-              index !== state.routes.length - 1 &&
-                styles.tabBarSpaceBetweenStyle,
+              index !== routes.length - 1 && styles.tabBarSpaceBetweenStyle,
             ]}
             onPress={onPress}
             underlayColor="transparent"
@@ -91,6 +121,7 @@ export const TabBarView = ({ state, descriptors, navigation }) => {
           </TouchableHighlight>
         );
       })}
+      <ModalMusic navigation={navigation} />
     </View>
   );
 };

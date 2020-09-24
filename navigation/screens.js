@@ -9,6 +9,7 @@ import RemindersScreen from 'screens/AuthScreens/NewUserModalScreens/RemindersSc
 import HomeScreen from 'screens/HomeScreen';
 import SleepScreen from 'screens/SleepScreen';
 import MeditateScreen from 'screens/MeditateScreen';
+import MusicScreen from 'screens/MusicScreen';
 
 import CourseScreen from 'screens/CourseScreen';
 
@@ -61,6 +62,11 @@ export default {
       name: 'Meditate',
       key: 'MEDITATE',
       component: MeditateScreen,
+    },
+    music: {
+      name: 'Music',
+      key: 'MUSIC',
+      component: MusicScreen,
     },
   },
 };

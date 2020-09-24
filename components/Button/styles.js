@@ -38,8 +38,8 @@ export default StyleSheet.create({
     flexDirection: 'column',
   },
   dateContainerStyle: {
-    width: 40,
-    height: 40,
+    width: scaleX * 40,
+    height: scaleX * 40,
     borderRadius: 50,
     borderWidth: 1,
     borderColor: colors.gray,

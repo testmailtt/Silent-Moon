@@ -38,4 +38,10 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignSelf: 'center',
   },
+  buttonsContainerStyle: {
+    marginTop: scaleY * 50,
+    marginBottom: scaleY * 28,
+    marginLeft: scaleX * 20,
+    zIndex: 10,
+  },
 });
