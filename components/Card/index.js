@@ -76,12 +76,10 @@ const CardCourse = ({ card, onPress, style }) => (
   >
     <Image
       source={card.icon}
-      style={[
-        styles.cardCourseImageStyle,
-        { width: scaleX * card.imageWidth, height: scaleY * card.imageHeight },
-      ]}
+      style={styles.cardCourseImageStyle}
       resizeMode="contain"
     />
+
     <View style={styles.cardCourseHeaderContainerStyle}>
       <Text size="sz18" weight="heavy" color={card.fontColor}>
         {card.title}

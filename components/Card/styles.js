@@ -29,18 +29,20 @@ export default StyleSheet.create({
   },
   cardCourseContainerStyle: {
     width: scaleX * 177,
-    height: 177,
     borderRadius: 10,
     overflow: 'hidden',
     justifyContent: 'space-between',
   },
   cardCourseImageStyle: {
     position: 'absolute',
-    top: 0,
+    top: scaleY * -10,
     right: scaleX * -20,
+    width: scaleX * 160,
+    height: scaleY * 110,
   },
   cardCourseHeaderContainerStyle: {
     marginTop: 85,
+    marginBottom: scaleY * 35,
     paddingHorizontal: scaleX * 15,
   },
   cardCourseFooterContainerStyle: {

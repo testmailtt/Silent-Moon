@@ -16,8 +16,6 @@ const HomeScreen = (props) => {
       backgroundColor: 'accent',
       fontColor: 'secondaryForeground',
       buttonFontColor: 'black',
-      imageWidth: 120,
-      imageHeight: 105,
     },
     {
       title: 'Relaxation',
@@ -27,8 +25,6 @@ const HomeScreen = (props) => {
       backgroundColor: 'lightSalmon',
       fontColor: 'black',
       buttonFontColor: 'white',
-      imageWidth: 200,
-      imageHeight: 200,
     },
     {
       title: 'Daily Thought',
