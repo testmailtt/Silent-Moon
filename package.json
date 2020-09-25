@@ -5,7 +5,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "android": "npx react-native run-android",
-    "ios": "npx react-native run-ios --simulator='iPhone X' ",
+    "ios": "npx react-native run-ios --simulator='iPhone Xs Max' ",
     "device": "react-native run-ios --device",
     "start": "react-native start",
     "test": "jest",

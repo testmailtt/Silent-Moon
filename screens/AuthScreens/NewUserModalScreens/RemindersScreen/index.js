@@ -13,7 +13,7 @@ const RemindersScreen = (props) => {
   const dates = ['su', 'm', 't', 'w', 'th', 'f', 's'];
 
   const setAuth = () => {
-    props.fetchAuth();
+    props.fetchAuth(true);
   };
 
   const onChange = (event, selectedTime) => {
@@ -45,7 +45,7 @@ const RemindersScreen = (props) => {
 const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchAuth: () => dispatch(fetchAuthAsync()),
+  fetchAuth: (flag) => dispatch(fetchAuthAsync(flag)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RemindersScreen);

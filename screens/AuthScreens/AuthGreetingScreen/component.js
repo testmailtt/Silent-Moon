@@ -13,13 +13,11 @@ type Props = {};
 
 const AuthGreetingScreen = ({ navigation, route, ...props }: Props) => (
   <ScreenLayout>
-    <View style={styles.backgroundImageContainerStyle}>
-      <Image
-        source={require('assets/images/Auth/BackgroundImage.png')}
-        style={styles.backgroundImageStyle}
-        resizeMode="stretch"
-      />
-    </View>
+    <Image
+      source={require('assets/images/Auth/BackgroundImage.png')}
+      style={styles.backgroundImageStyle}
+      resizeMode="cover"
+    />
 
     <Logo />
 

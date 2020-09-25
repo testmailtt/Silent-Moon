@@ -12,7 +12,7 @@ export const setAuth = makeActionCreator('user/SET_AUTH');
 export const { fetchAuthAsync, selectFetchAuthState } = makeAsyncOperation({
   entityName: USER_STATE_KEY,
   actionName: 'fetchAuth',
-  resolver: async () => await true,
+  resolver: async (flag) => flag,
   onSuccessAction: setAuth,
 });
 

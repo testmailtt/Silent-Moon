@@ -2,24 +2,12 @@ import { StyleSheet } from 'react-native';
 import { FullWidth, scaleY } from 'constants/size';
 
 export default StyleSheet.create({
-  backgroundImageContainerStyle: {
-    position: 'relative',
-    overflow: 'hidden',
-    alignItems: 'center',
-    flex: 5,
-    marginTop: scaleY * -50,
-    marginBottom: scaleY * 30,
-  },
   backgroundImageStyle: {
-    position: 'absolute',
-    bottom: 0,
-    width: FullWidth + 40,
+    width: FullWidth,
     height: 504,
-    left: -20,
+    marginTop: scaleY * -50,
   },
-  bodyContainerStyle: {
-    flex: 3,
-  },
+  bodyContainerStyle: {},
   buttonContainerStyle: {
     marginBottom: scaleY * 28,
   },

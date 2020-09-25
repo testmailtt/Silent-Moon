@@ -7,7 +7,7 @@ import { BlurView } from '@react-native-community/blur';
 import { Text } from 'components/Text';
 
 import colors from 'constants/colors';
-import { scaleX, scaleY } from 'constants/size';
+import { scaleY } from 'constants/size';
 
 import styles from './styles';
 
@@ -194,7 +194,7 @@ const CardMeditate = ({ card, isLong, onPress, style }) => (
     style={[
       styles.cardCourseContainerStyle,
       {
-        height: isLong ? 210 : 170,
+        height: isLong ? scaleY * 210 : scaleY * 170,
         marginBottom: scaleY * 20,
       },
       style,
@@ -211,7 +211,7 @@ const CardMeditate = ({ card, isLong, onPress, style }) => (
       blurAmount={20}
       reducedTransparencyFallbackColor="white"
     >
-      <Text size="sz18" weight="heavy" color="white">
+      <Text size="sz18" weight="heavy" color="white" style={{ width: '95%' }}>
         {card.title}
       </Text>
     </BlurView>

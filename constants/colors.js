@@ -20,6 +20,7 @@ export default {
   music: '#FAF7F2',
   border: '#BABCC6',
   grayPlayer: '#A0A3B1',
+  red: '#FF84A2',
 };
 
 export const cardsColor = {

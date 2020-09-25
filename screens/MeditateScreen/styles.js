@@ -29,6 +29,6 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   viewBalanceStyle: {
-    marginTop: -40,
+    marginTop: scaleY * -40,
   },
 });

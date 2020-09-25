@@ -29,7 +29,7 @@ export default StyleSheet.create({
     marginBottom: scaleY * 5,
   },
   tabBarInactiveIconStyle: {
-    height: scaleY * 22,
+    height: 18,
     marginBottom: scaleY * 5,
   },
   tabBarButtonContainerStyle: {
