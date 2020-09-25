@@ -52,7 +52,7 @@ const TabBarIcon = ({ routeName, isFocused }) => {
 const ModalMusic = ({ navigation }) => (
   <TouchableHighlight
     style={[styles.tabBarButtonContainerStyle]}
-    onPress={() => navigation.navigate(screens.app.music.name)}
+    onPress={() => navigation.navigate(screens.app.player.name)}
     underlayColor="transparent"
   >
     <>
@@ -60,7 +60,7 @@ const ModalMusic = ({ navigation }) => (
         <TabBarIcon routeName={'Music'} />
       </View>
       <Text size="sz14" weight="medium" color="gray">
-        {screens.app.music.name}
+        {screens.app.player.name}
       </Text>
     </>
   </TouchableHighlight>
@@ -81,7 +81,7 @@ export const TabBarView = ({ state, descriptors, navigation }) => {
         const isFocused = state.index === index;
 
         const onPress = () => {
-          if (route.name !== screens.app.music.name) {
+          if (route.name !== screens.app.player.name) {
             const event = navigation.emit({
               type: 'tabPress',
               target: route.key,
@@ -92,7 +92,7 @@ export const TabBarView = ({ state, descriptors, navigation }) => {
               navigation.navigate(route.name);
             }
           } else {
-            navigation.navigate(screens.app.music.name);
+            navigation.navigate(screens.app.player.name);
           }
         };
 

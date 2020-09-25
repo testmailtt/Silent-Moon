@@ -1,11 +1,16 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import Component from './component';
 
 const MusicScreen = (props) => {
-  return <Component {...props} />;
+  const [track] = useState({
+    title: 'Focus Attention',
+    from: '7 days of calm',
+    duration: 45,
+  });
+  return <Component track={track} {...props} />;
 };
 
 const mapStateToProps = (state) => ({});

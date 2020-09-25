@@ -36,6 +36,7 @@ export default StyleSheet.create({
     paddingHorizontal: scaleX * 24,
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginBottom: scaleY * 52,
   },
   variableContainerStyle: {
     paddingHorizontal: scaleX * 20,
@@ -67,5 +68,27 @@ export default StyleSheet.create({
   },
   playButtonActiveStyle: {
     backgroundColor: colors.darkBlack,
+  },
+  timelineStyle: {
+    height: 2,
+    width: scaleX * 333,
+    alignSelf: 'center',
+    marginBottom: scaleY * 20,
+  },
+  timeContainerStyle: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+  },
+  thumbStyle: {
+    height: 25,
+    width: 25,
+    borderWidth: 4,
+    borderColor: colors.border,
+    borderRadius: 50,
+  },
+  thumbTouchSizeStyle: {
+    width: 50,
+    height: 50,
   },
 });

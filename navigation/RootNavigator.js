@@ -20,8 +20,8 @@ const RootNavigator = (props) => (
           options={{ headerShown: false }}
         />
         <RootStack.Screen
-          name={screens.app.music.name}
-          component={screens.app.music.component}
+          name={screens.app.player.name}
+          component={screens.app.player.component}
           options={{ headerShown: false }}
         />
       </>
