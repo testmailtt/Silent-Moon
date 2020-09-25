@@ -1,6 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import { selectUsername } from 'entities/user/state';
 
 import { TabBarView } from 'components/TabBar';
 
@@ -9,7 +12,7 @@ import screens from './screens';
 const AppStack = createStackNavigator();
 const TabStack = createBottomTabNavigator();
 
-const TabNavigator = () => (
+const TabNavigator = (props) => (
   <TabStack.Navigator
     initialRouteName="Home"
     tabBar={(props) => <TabBarView routes={props.state.routes} {...props} />}
@@ -30,16 +33,19 @@ const TabNavigator = () => (
       component={screens.app.meditate.component}
       options={{ headerShown: false }}
     />
+    <TabStack.Screen
+      name={props.username || 'Profile'}
+      component={screens.app.profile.component}
+      options={{ headerShown: false }}
+    />
   </TabStack.Navigator>
 );
 
-const AppNavigator = () => (
+const AppNavigator = (props) => (
   <AppStack.Navigator>
-    <AppStack.Screen
-      name="Tabs"
-      component={TabNavigator}
-      options={{ headerShown: false }}
-    />
+    <AppStack.Screen name="Tabs" options={{ headerShown: false }}>
+      {() => <TabNavigator username={props.username} />}
+    </AppStack.Screen>
     <AppStack.Screen
       name={screens.app.course.key}
       component={screens.app.course.component}
@@ -47,5 +53,10 @@ const AppNavigator = () => (
     />
   </AppStack.Navigator>
 );
+const mapStateToProps = (state) => ({
+  username: selectUsername(state),
+});
 
-export default AppNavigator;
+const mapDispatchToProps = (dispatch) => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppNavigator);

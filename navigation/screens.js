@@ -10,6 +10,7 @@ import HomeScreen from 'screens/HomeScreen';
 import SleepScreen from 'screens/SleepScreen';
 import MeditateScreen from 'screens/MeditateScreen';
 import PlayerScreen from 'screens/PlayerScreen';
+import ProfileScreen from 'screens/ProfileScreen';
 
 import CourseScreen from 'screens/CourseScreen';
 
@@ -67,6 +68,11 @@ export default {
       name: 'Player',
       key: 'PLAYER',
       component: PlayerScreen,
+    },
+    profile: {
+      name: 'Profile',
+      key: 'PROFILE',
+      component: ProfileScreen,
     },
   },
 };

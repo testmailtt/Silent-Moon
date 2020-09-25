@@ -22,7 +22,7 @@ const RootNavigator = (props) => (
         <RootStack.Screen
           name={screens.app.player.name}
           component={screens.app.player.component}
-          options={{ headerShown: false }}
+          options={{ headerShown: false, gestureEnabled: true }}
         />
       </>
     ) : (

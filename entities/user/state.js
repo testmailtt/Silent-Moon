@@ -5,6 +5,7 @@ import { static as immutable } from 'seamless-immutable';
 export const USER_STATE_KEY = 'user';
 
 export const selectIsAuth = (state) => state[USER_STATE_KEY].isAuth;
+export const selectUsername = (state) => state[USER_STATE_KEY].username;
 
 export const setAuth = makeActionCreator('user/SET_AUTH');
 
@@ -24,6 +25,7 @@ export const userReducer = makeReducer(
   {
     defaultState: {
       isAuth: true,
+      username: 'Antony',
     },
   }
 );

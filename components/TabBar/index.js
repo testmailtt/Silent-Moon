@@ -6,7 +6,6 @@ import screens from 'navigation/screens';
 import { Text } from 'components/Text';
 
 import styles from './styles';
-import { useState } from 'react';
 
 const TabBarIcon = ({ routeName, isFocused }) => {
   let icon;
@@ -32,7 +31,15 @@ const TabBarIcon = ({ routeName, isFocused }) => {
         ? require('assets/images/Tab/Active/Music.png')
         : require('assets/images/Tab/Inactive/Music.png');
       break;
+    case 'Profile':
+      icon = isFocused
+        ? require('assets/images/Tab/Active/User.png')
+        : require('assets/images/Tab/Inactive/User.png');
+      break;
     default:
+      icon = isFocused
+        ? require('assets/images/Tab/Active/User.png')
+        : require('assets/images/Tab/Inactive/User.png');
       break;
   }
 
@@ -121,7 +128,7 @@ export const TabBarView = ({ state, descriptors, navigation }) => {
           </TouchableHighlight>
         );
       })}
-      <ModalMusic navigation={navigation} />
+      <ModalMusic key="Music" navigation={navigation} />
     </View>
   );
 };
