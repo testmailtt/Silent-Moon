@@ -56,7 +56,17 @@ const SleepPlaylistScreen = (props) => {
     },
   ]);
 
-  return <Component cardsRecommended={cardsRecommended} {...props} />;
+  const navigateToPlayer = () => {
+    props.navigation.navigate(props.route.params.player, { type: 'sleep' });
+  };
+
+  return (
+    <Component
+      cardsRecommended={cardsRecommended}
+      navigateToPlayer={navigateToPlayer}
+      {...props}
+    />
+  );
 };
 
 const mapStateToProps = (state) => ({});

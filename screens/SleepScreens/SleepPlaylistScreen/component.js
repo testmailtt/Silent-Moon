@@ -14,6 +14,7 @@ type Props = {};
 const SleepPlaylistScreen = ({
   navigation,
   cardsRecommended,
+  navigateToPlayer,
   ...props
 }: Props) => (
   <ScreenLayout style={styles.screenLayoutStyle}>
@@ -34,7 +35,7 @@ const SleepPlaylistScreen = ({
           key={item.title + index}
           card={item}
           color={'white'}
-          onPress={props.navigateToDetails}
+          onPress={navigateToPlayer}
           style={
             (index !== cardsRecommended.length % 2) !== 0 &&
             styles.cardSpaceStyle

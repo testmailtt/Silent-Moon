@@ -6,6 +6,9 @@ export default StyleSheet.create({
   screenLayoutStyle: {
     backgroundColor: colors.music,
   },
+  screenLayoutSleepStyle: {
+    backgroundColor: colors.blue,
+  },
   imageBackgroundStyle: {
     position: 'absolute',
     height: FullHeight,
@@ -59,15 +62,11 @@ export default StyleSheet.create({
   playButtonStyle: {
     width: scaleX * 88,
     height: scaleX * 88,
-    backgroundColor: colors.black,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: scaleX * 88,
     borderWidth: 7,
     borderColor: colors.border,
-  },
-  playButtonActiveStyle: {
-    backgroundColor: colors.darkBlack,
   },
   timelineStyle: {
     height: 2,

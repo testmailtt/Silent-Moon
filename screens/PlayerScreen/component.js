@@ -23,6 +23,8 @@ const MusicScreen = ({ track, ...props }: Props) => {
   const [isPlayed, setPlay] = useState(false);
   const [timelineValue, setTimelineValue] = useState(0);
 
+  const type = props.route.params && props.route.params.type;
+
   useEffect(() => {
     momentDurationFormatSetup(moment);
   });
@@ -36,14 +38,27 @@ const MusicScreen = ({ track, ...props }: Props) => {
   };
 
   return (
-    <ScreenLayout style={styles.screenLayoutStyle}>
+    <ScreenLayout
+      style={
+        type === 'sleep'
+          ? styles.screenLayoutSleepStyle
+          : styles.screenLayoutStyle
+      }
+    >
       <Image
-        source={require('assets/images/Music/MusicBackground.png')}
+        source={
+          type === 'sleep'
+            ? require('assets/images/Music/MusicBackgroundSleep.png')
+            : require('assets/images/Music/MusicBackground.png')
+        }
         style={styles.imageBackgroundStyle}
         resizeMode="cover"
       />
       <View style={styles.headerButtonContainerStyle}>
-        <BackButton navigation={props.navigation} />
+        <BackButton
+          navigation={props.navigation}
+          type={type === 'sleep' && 'sleepPlayer'}
+        />
         <View style={styles.innerHeaderContainerStyle}>
           <LikeButton style={styles.spaceBetweenStyle} />
           <DownloadButton style={styles.downloadButtonStyle} />
@@ -55,6 +70,7 @@ const MusicScreen = ({ track, ...props }: Props) => {
             size="sz34"
             weight="heavy"
             align="center"
+            color={type === 'sleep' && 'sleep'}
             style={styles.titlePlayerStyle}
           >
             {track.title}
@@ -93,13 +109,26 @@ const MusicScreen = ({ track, ...props }: Props) => {
             }}
             style={[
               styles.playButtonStyle,
-              isPlayButtonActive && styles.playButtonActiveStyle,
+              {
+                backgroundColor:
+                  type === 'sleep'
+                    ? isPlayButtonActive
+                      ? colors.darkSleep
+                      : colors.sleep
+                    : isPlayButtonActive
+                    ? colors.darkBlack
+                    : colors.black,
+              },
             ]}
           >
             <Image
               source={
                 isPlayed
-                  ? require('assets/images/Controls/Player/Play.png')
+                  ? type === 'sleep'
+                    ? require('assets/images/Controls/Player/PlaySleep.png')
+                    : require('assets/images/Controls/Player/Play.png')
+                  : type === 'sleep'
+                  ? require('assets/images/Controls/Player/PauseSleep.png')
                   : require('assets/images/Controls/Player/Pause.png')
               }
               style={styles.playButtonImageStyle}
@@ -114,7 +143,11 @@ const MusicScreen = ({ track, ...props }: Props) => {
             <Image
               source={
                 isMoveForwardActive
-                  ? require('assets/images/Controls/Player/MoveForwardActive.png')
+                  ? type === 'sleep'
+                    ? require('assets/images/Controls/Player/MoveForwardActiveSleep.png')
+                    : require('assets/images/Controls/Player/MoveForwardActive.png')
+                  : type === 'sleep'
+                  ? require('assets/images/Controls/Player/MoveForwardSleep.png')
                   : require('assets/images/Controls/Player/MoveForward.png')
               }
               style={styles.moveImageStyle}
@@ -126,22 +159,34 @@ const MusicScreen = ({ track, ...props }: Props) => {
             style={styles.timelineStyle}
             thumbStyle={styles.thumbStyle}
             thumbTouchSize={styles.thumbTouchSizeStyle}
-            thumbTintColor={colors.black}
+            thumbTintColor={type === 'sleep' ? colors.accent : colors.black}
             minimumValue={0}
             maximumValue={track.duration}
             step={0.1}
             value={timelineValue}
             onValueChange={(val) => setTimelineValue(val)}
-            minimumTrackTintColor={colors.black}
-            maximumTrackTintColor={colors.grayPlayer}
+            minimumTrackTintColor={
+              type === 'sleep' ? colors.sleep : colors.black
+            }
+            maximumTrackTintColor={
+              type === 'sleep' ? colors.sleepForeground : colors.grayPlayer
+            }
           />
           <View style={styles.timeContainerStyle}>
-            <Text size="sz16" weight="medium">
+            <Text
+              size="sz16"
+              weight="medium"
+              color={type === 'sleep' && 'sleep'}
+            >
               {moment
                 .duration(timelineValue.toFixed(2), 'm')
                 .format('mm:ss', { trim: false })}
             </Text>
-            <Text size="sz16" weight="medium">
+            <Text
+              size="sz16"
+              weight="medium"
+              color={type === 'sleep' && 'sleep'}
+            >
               {moment
                 .duration(track.duration, 'm')
                 .format('mm:ss', { trim: false })}

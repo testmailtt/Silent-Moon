@@ -70,7 +70,9 @@ export const BackButton = ({ navigation, type, style }: Props) => (
     <Image
       source={
         type
-          ? require('assets/images/Controls/BackButtonSleep.png')
+          ? type === 'sleepPlayer'
+            ? require('assets/images/Controls/CloseButton.png')
+            : require('assets/images/Controls/BackButtonSleep.png')
           : require('assets/images/Controls/BackButton.png')
       }
       style={styles.backButtonImageStyle}

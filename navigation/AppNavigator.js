@@ -71,6 +71,7 @@ const AppNavigator = (props) => (
       name={screens.sleep.sleep_playlist.key}
       component={screens.sleep.sleep_playlist.component}
       options={{ headerShown: false }}
+      initialParams={{ player: screens.app.player.name }}
     />
   </AppStack.Navigator>
 );
