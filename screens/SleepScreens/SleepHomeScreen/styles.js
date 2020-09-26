@@ -23,6 +23,7 @@ export default StyleSheet.create({
     marginBottom: scaleY * 15,
   },
   horizontalScrollViewContainerStyle: {
+    paddingBottom: scaleY * 40,
     marginBottom: scaleY * 30,
   },
   filterSpaceStyle: {
