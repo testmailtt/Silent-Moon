@@ -56,23 +56,6 @@ const TabBarIcon = ({ routeName, isFocused }) => {
   );
 };
 
-const ModalMusic = ({ navigation }) => (
-  <TouchableHighlight
-    style={[styles.tabBarButtonContainerStyle]}
-    onPress={() => navigation.navigate(screens.app.player.name)}
-    underlayColor="transparent"
-  >
-    <>
-      <View style={styles.tabBarIconContainerStyle}>
-        <TabBarIcon routeName={'Music'} />
-      </View>
-      <Text size="sz14" weight="medium" color="gray">
-        {screens.app.player.name}
-      </Text>
-    </>
-  </TouchableHighlight>
-);
-
 export const TabBarView = ({ state, descriptors, navigation }) => {
   let routes = state.routes;
 
@@ -83,7 +66,13 @@ export const TabBarView = ({ state, descriptors, navigation }) => {
   }
 
   return (
-    <View style={styles.tabBarContainerStyle}>
+    <View
+      style={[
+        styles.tabBarContainerStyle,
+        routes[state.index].name === 'Sleep' &&
+          styles.tabBarContainerSleepStyle,
+      ]}
+    >
       {routes.map((route, index) => {
         const isFocused = state.index === index;
 
@@ -120,7 +109,13 @@ export const TabBarView = ({ state, descriptors, navigation }) => {
               <Text
                 size="sz14"
                 weight="medium"
-                color={isFocused ? 'accent' : 'gray'}
+                color={
+                  isFocused
+                    ? route.name === 'Sleep'
+                      ? 'white'
+                      : 'accent'
+                    : 'gray'
+                }
               >
                 {route.name}
               </Text>
@@ -128,7 +123,6 @@ export const TabBarView = ({ state, descriptors, navigation }) => {
           </TouchableHighlight>
         );
       })}
-      <ModalMusic key="Music" navigation={navigation} />
     </View>
   );
 };

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import Component from './component';
 
-const SleepScreen = (props) => {
+const SleepHomeScreen = (props) => {
   return <Component {...props} />;
 };
 
@@ -12,4 +12,4 @@ const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(SleepScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(SleepHomeScreen);

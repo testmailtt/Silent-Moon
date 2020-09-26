@@ -19,11 +19,6 @@ const RootNavigator = (props) => (
           component={AppNavigator}
           options={{ headerShown: false }}
         />
-        <RootStack.Screen
-          name={screens.app.player.name}
-          component={screens.app.player.component}
-          options={{ headerShown: false, gestureEnabled: true }}
-        />
       </>
     ) : (
       <>

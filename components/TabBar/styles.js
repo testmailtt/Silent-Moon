@@ -9,13 +9,15 @@ export default StyleSheet.create({
     backgroundColor: colors.white,
     flexDirection: 'row',
     justifyContent: 'space-between',
-
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.1,
     shadowRadius: 10,
     paddingHorizontal: scaleX * 20,
     paddingTop: scaleY * 10,
+  },
+  tabBarContainerSleepStyle: {
+    backgroundColor: colors.blue,
   },
   tabBarIconContainerStyle: {
     width: 46,

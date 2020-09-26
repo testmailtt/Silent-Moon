@@ -21,6 +21,7 @@ export default {
   border: '#BABCC6',
   grayPlayer: '#A0A3B1',
   red: '#FF84A2',
+  blue: '#03174C',
 };
 
 export const cardsColor = {

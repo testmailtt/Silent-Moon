@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { selectUsername } from 'entities/user/state';
+import { selectUsername, selectIsNewUser } from 'entities/user/state';
 
 import { TabBarView } from 'components/TabBar';
 
@@ -12,7 +12,7 @@ import screens from './screens';
 const AppStack = createStackNavigator();
 const TabStack = createBottomTabNavigator();
 
-const TabNavigator = (props) => (
+const TabNavigator = ({ username, isNewUser }) => (
   <TabStack.Navigator
     initialRouteName="Home"
     tabBar={(props) => <TabBarView routes={props.state.routes} {...props} />}
@@ -24,17 +24,29 @@ const TabNavigator = (props) => (
       initialParams={{ course: screens.app.course.key }}
     />
     <TabStack.Screen
-      name={screens.app.sleep.name}
-      component={screens.app.sleep.component}
-      options={{ headerShown: false }}
-    />
-    <TabStack.Screen
       name={screens.app.meditate.name}
       component={screens.app.meditate.component}
       options={{ headerShown: false }}
     />
     <TabStack.Screen
-      name={props.username || 'Profile'}
+      name="Sleep"
+      component={
+        isNewUser
+          ? screens.sleep.sleep_greeting.component
+          : screens.sleep.sleep_home.component
+      }
+      options={{ headerShown: false, tabBarVisible: !isNewUser }}
+      initialParams={{ sleepHome: screens.sleep.sleep_home.key }}
+    />
+    <TabStack.Screen
+      name={screens.app.player.name}
+      component={screens.app.player.component}
+      options={{
+        tabBarVisible: false,
+      }}
+    />
+    <TabStack.Screen
+      name={username || 'Profile'}
       component={screens.app.profile.component}
       options={{ headerShown: false }}
     />
@@ -44,7 +56,9 @@ const TabNavigator = (props) => (
 const AppNavigator = (props) => (
   <AppStack.Navigator>
     <AppStack.Screen name="Tabs" options={{ headerShown: false }}>
-      {() => <TabNavigator username={props.username} />}
+      {() => (
+        <TabNavigator username={props.username} isNewUser={props.isNewUser} />
+      )}
     </AppStack.Screen>
     <AppStack.Screen
       name={screens.app.course.key}
@@ -54,6 +68,7 @@ const AppNavigator = (props) => (
   </AppStack.Navigator>
 );
 const mapStateToProps = (state) => ({
+  isNewUser: selectIsNewUser(state),
   username: selectUsername(state),
 });
 

@@ -148,7 +148,7 @@ export const FilterButton = ({ title, icon, onPress, isActive, style }) => (
         <Image
           source={icon}
           style={styles.filterIconStyle}
-          resizeMode="center"
+          resizeMode="contain"
         />
       </View>
       <Text

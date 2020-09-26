@@ -7,10 +7,12 @@ import TopicScreen from 'screens/AuthScreens/NewUserModalScreens/TopicScreen';
 import RemindersScreen from 'screens/AuthScreens/NewUserModalScreens/RemindersScreen';
 
 import HomeScreen from 'screens/HomeScreen';
-import SleepScreen from 'screens/SleepScreen';
 import MeditateScreen from 'screens/MeditateScreen';
 import PlayerScreen from 'screens/PlayerScreen';
 import ProfileScreen from 'screens/ProfileScreen';
+
+import SleepGreetingScreen from 'screens/SleepScreens/SleepGreetingScreen';
+import SleepHomeScreen from 'screens/SleepScreens/SleepHomeScreen';
 
 import CourseScreen from 'screens/CourseScreen';
 
@@ -49,11 +51,6 @@ export default {
       key: 'HOME',
       component: HomeScreen,
     },
-    sleep: {
-      name: 'Sleep',
-      key: 'SLEEP',
-      component: SleepScreen,
-    },
     course: {
       name: 'Course',
       key: 'COURSE',
@@ -65,14 +62,24 @@ export default {
       component: MeditateScreen,
     },
     player: {
-      name: 'Player',
-      key: 'PLAYER',
+      name: 'Music',
+      key: 'MUSIC',
       component: PlayerScreen,
     },
     profile: {
       name: 'Profile',
       key: 'PROFILE',
       component: ProfileScreen,
+    },
+  },
+  sleep: {
+    sleep_greeting: {
+      key: '_SLEEP_GREETING',
+      component: SleepGreetingScreen,
+    },
+    sleep_home: {
+      key: '_SLEEP_HOME',
+      component: SleepHomeScreen,
     },
   },
 };
