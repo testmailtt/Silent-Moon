@@ -14,6 +14,11 @@ const alignStyles = ['left', 'center', 'right'].reduce(
   {}
 );
 
+const familyStyles = (acc, family) => ({
+  ...acc,
+  fontFamily: family || 'HelveticaNeue',
+});
+
 const transformStyles = ['uppercase'].reduce(
   (acc, transform) => ({ ...acc, [transform]: { textTransform: transform } }),
   {}
@@ -21,7 +26,7 @@ const transformStyles = ['uppercase'].reduce(
 
 export default StyleSheet.create({
   container: {
-    fontFamily: 'HelveticaNeue',
+    ...familyStyles,
   },
 
   sz11: {
@@ -62,6 +67,10 @@ export default StyleSheet.create({
 
   sz34: {
     fontSize: Math.round(scaleY * 34 + 0.6),
+  },
+
+  sz36: {
+    fontSize: Math.round(scaleY * 36 + 0.6),
   },
 
   thin: {
@@ -137,6 +146,17 @@ export default StyleSheet.create({
       },
       android: {
         fontFamily: 'HelveticaNeue-Heavy',
+      },
+    }),
+  },
+
+  semiBold: {
+    ...Platform.select({
+      ios: {
+        fontWeight: '900',
+      },
+      android: {
+        fontFamily: 'Garamond-SemiBold',
       },
     }),
   },

@@ -34,9 +34,7 @@ export default StyleSheet.create({
     width: FullWidth - 40,
     height: scaleX * 63,
   },
-  filterButtonContainerStyle: {
-    flexDirection: 'column',
-  },
+  filterButtonContainerStyle: {},
   dateContainerStyle: {
     width: scaleX * 40,
     height: scaleX * 40,

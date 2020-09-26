@@ -161,7 +161,7 @@ const CardMusic = ({ card, onPress, style }) => (
   </View>
 );
 
-const CardRecommended = ({ card, onPress, style }) => (
+const CardRecommended = ({ card, onPress, color, style }) => (
   <TouchableOpacity
     onPress={onPress}
     style={[styles.cardRecommendedContainerStyle, style]}
@@ -178,6 +178,7 @@ const CardRecommended = ({ card, onPress, style }) => (
     <Text
       size="sz18"
       weight="heavy"
+      color={color || 'black'}
       style={styles.cardRecommendedTitleContainerStyle}
     >
       {card.title}
@@ -218,4 +219,54 @@ const CardMeditate = ({ card, isLong, onPress, style }) => (
   </TouchableOpacity>
 );
 
-export { CardTopic, CardCourse, CardMusic, CardRecommended, CardMeditate };
+const CardSleep = ({ card, onPress, style }) => (
+  <View style={[styles.sleepContainerStyle, style]}>
+    <Image
+      source={card.image}
+      style={styles.sleepImageContainerStyle}
+      resizeMode="cover"
+    />
+    <Text
+      size="sz36"
+      align="center"
+      weight="heavy"
+      color="sleepCard"
+      style={styles.cardSleepHeaderTitleStyle}
+    >
+      {card.title}
+    </Text>
+    <Text
+      size="sz16"
+      color="white"
+      align="center"
+      style={styles.cardSleepHeaderDescriptionStyle}
+    >
+      {card.description}
+    </Text>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[
+        styles.cardSleepButtonStyle,
+        { backgroundColor: colors.secondaryForeground },
+      ]}
+    >
+      <Text
+        size="sz12"
+        transform="uppercase"
+        weight="medium"
+        color={card.buttonFontColor}
+      >
+        start
+      </Text>
+    </TouchableOpacity>
+  </View>
+);
+
+export {
+  CardTopic,
+  CardCourse,
+  CardMusic,
+  CardRecommended,
+  CardMeditate,
+  CardSleep,
+};

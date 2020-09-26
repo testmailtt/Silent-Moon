@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { scaleX, scaleY } from 'constants/size';
+import { scaleX, scaleY, FullWidth } from 'constants/size';
 
 export default StyleSheet.create({
   cardContainerStyle: {
@@ -86,7 +86,7 @@ export default StyleSheet.create({
   },
   cardRecommendedContainerStyle: {},
   cardRecommendedImageStyle: {
-    width: scaleX * 162,
+    width: scaleX * 177,
     height: scaleY * 118.5,
     borderRadius: 10,
     marginBottom: scaleY * 10.5,
@@ -106,5 +106,34 @@ export default StyleSheet.create({
     zIndex: 10,
     justifyContent: 'center',
     paddingLeft: scaleX * 15,
+  },
+  sleepContainerStyle: {
+    width: '100%',
+    height: scaleY * 233,
+    borderRadius: 10,
+  },
+  sleepImageContainerStyle: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    top: 0,
+  },
+  cardSleepHeaderTitleStyle: {
+    marginTop: scaleY * 60,
+    textTransform: 'capitalize',
+    marginBottom: scaleY * 5,
+  },
+  cardSleepHeaderDescriptionStyle: {
+    width: scaleX * 230,
+    alignSelf: 'center',
+    marginBottom: scaleY * 22,
+  },
+  cardSleepButtonStyle: {
+    width: scaleX * 70,
+    height: scaleY * 35,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 25,
+    alignSelf: 'center',
   },
 });

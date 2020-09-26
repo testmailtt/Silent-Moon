@@ -15,6 +15,7 @@ export const Text = (props) => (
       styles[props.weight],
       styles[props.align],
       styles[props.transform],
+      styles[props.family],
       props.style,
     ]}
   />
@@ -33,6 +34,7 @@ Text.propTypes = {
     'sz28',
     'sz30',
     'sz34',
+    'sz36',
   ]),
   color: PropTypes.oneOf(Object.keys(colors)),
   weight: PropTypes.oneOf([
@@ -43,10 +45,12 @@ Text.propTypes = {
     'medium',
     'bold',
     'heavy',
+    'semiBold',
     'black',
   ]),
   align: PropTypes.oneOf(['left', 'center', 'right']),
   transform: PropTypes.oneOf(['uppercase']),
+  family: PropTypes.oneOf(['Garamond-SemiBold']),
 };
 
 Text.defaultProps = {

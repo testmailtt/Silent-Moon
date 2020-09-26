@@ -22,6 +22,8 @@ export default {
   grayPlayer: '#A0A3B1',
   red: '#FF84A2',
   blue: '#03174C',
+  sleep: '#E6E7F2',
+  sleepCard: '#FFE7BF',
 };
 
 export const cardsColor = {

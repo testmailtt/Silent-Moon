@@ -136,29 +136,38 @@ export const DateButton = ({ title, onPress, isActive, style }) => (
   </TouchableHighlight>
 );
 
-export const FilterButton = ({ title, icon, onPress, isActive, style }) => (
-  <TouchableNativeFeedback onPress={onPress}>
-    <View style={[style, styles.filterButtonContainerStyle]}>
-      <View
-        style={[
-          styles.filterIconContainerStyle,
-          isActive && styles.filterIconContainerActiveStyle,
-        ]}
-      >
-        <Image
-          source={icon}
-          style={styles.filterIconStyle}
-          resizeMode="contain"
-        />
+export const FilterButton = ({
+  title,
+  icon,
+  color,
+  onPress,
+  isActive,
+  style,
+}) => {
+  return (
+    <TouchableNativeFeedback onPress={onPress}>
+      <View style={[style, styles.filterButtonContainerStyle]}>
+        <View
+          style={[
+            styles.filterIconContainerStyle,
+            isActive && styles.filterIconContainerActiveStyle,
+          ]}
+        >
+          <Image
+            source={icon}
+            style={styles.filterIconStyle}
+            resizeMode="contain"
+          />
+        </View>
+        <Text
+          size="sz16"
+          weight="medium"
+          align="center"
+          color={isActive ? (color ? color : 'black') : 'gray'}
+        >
+          {title}
+        </Text>
       </View>
-      <Text
-        size="sz16"
-        weight="medium"
-        align="center"
-        color={isActive ? 'black' : 'gray'}
-      >
-        {title}
-      </Text>
-    </View>
-  </TouchableNativeFeedback>
-);
+    </TouchableNativeFeedback>
+  );
+};
