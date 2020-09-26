@@ -150,6 +150,7 @@ export const FilterButton = ({
         <View
           style={[
             styles.filterIconContainerStyle,
+            { backgroundColor: color ? colors.sleepFilter : colors.gray },
             isActive && styles.filterIconContainerActiveStyle,
           ]}
         >

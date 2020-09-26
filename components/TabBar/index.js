@@ -7,6 +7,23 @@ import { Text } from 'components/Text';
 
 import styles from './styles';
 
+const ModalMusic = ({ navigation }) => (
+  <TouchableHighlight
+    style={[styles.tabBarButtonContainerStyle]}
+    onPress={() => navigation.navigate(screens.app.player.name)}
+    underlayColor="transparent"
+  >
+    <>
+      <View style={styles.tabBarIconContainerStyle}>
+        <TabBarIcon routeName={'Music'} />
+      </View>
+      <Text size="sz14" weight="medium" color="gray">
+        {screens.app.player.name}
+      </Text>
+    </>
+  </TouchableHighlight>
+);
+
 const TabBarIcon = ({ routeName, isFocused }) => {
   let icon;
 
@@ -123,6 +140,7 @@ export const TabBarView = ({ state, descriptors, navigation }) => {
           </TouchableHighlight>
         );
       })}
+      <ModalMusic key="Music" navigation={navigation} />
     </View>
   );
 };

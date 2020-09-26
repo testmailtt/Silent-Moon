@@ -39,13 +39,6 @@ const TabNavigator = ({ username, isNewUser }) => (
       initialParams={{ sleepHome: screens.sleep.sleep_home.key }}
     />
     <TabStack.Screen
-      name={screens.app.player.name}
-      component={screens.app.player.component}
-      options={{
-        tabBarVisible: false,
-      }}
-    />
-    <TabStack.Screen
       name={username || 'Profile'}
       component={screens.app.profile.component}
       options={{ headerShown: false }}

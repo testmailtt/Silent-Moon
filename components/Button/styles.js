@@ -56,7 +56,6 @@ export default StyleSheet.create({
     width: scaleY * 65,
     height: scaleY * 65,
     borderRadius: scaleX * 25,
-    backgroundColor: colors.gray,
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: scaleY * 10,

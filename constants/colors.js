@@ -24,6 +24,7 @@ export default {
   blue: '#03174C',
   sleep: '#E6E7F2',
   sleepCard: '#FFE7BF',
+  sleepFilter: '#586894',
 };
 
 export const cardsColor = {
