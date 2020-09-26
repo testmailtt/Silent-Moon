@@ -25,6 +25,7 @@ export default {
   sleep: '#E6E7F2',
   sleepCard: '#FFE7BF',
   sleepFilter: '#586894',
+  divider: '#98A1BD',
 };
 
 export const cardsColor = {

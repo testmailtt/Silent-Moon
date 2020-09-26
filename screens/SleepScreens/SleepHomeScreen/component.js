@@ -68,6 +68,7 @@ const SleepHomeScreen = ({
               key={item.title}
               card={item}
               color={'white'}
+              onPress={props.navigateToDetails}
               style={
                 (index !== cardsRecommended.length % 2) !== 0 &&
                 styles.cardSpaceStyle

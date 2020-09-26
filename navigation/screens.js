@@ -13,6 +13,7 @@ import ProfileScreen from 'screens/ProfileScreen';
 
 import SleepGreetingScreen from 'screens/SleepScreens/SleepGreetingScreen';
 import SleepHomeScreen from 'screens/SleepScreens/SleepHomeScreen';
+import SleepDetailsScreen from 'screens/SleepScreens/SleepDetailsScreen';
 
 import CourseScreen from 'screens/CourseScreen';
 
@@ -80,6 +81,10 @@ export default {
     sleep_home: {
       key: '_SLEEP_HOME',
       component: SleepHomeScreen,
+    },
+    sleep_details: {
+      key: '_SLEEP_DETAILS',
+      component: SleepDetailsScreen,
     },
   },
 };

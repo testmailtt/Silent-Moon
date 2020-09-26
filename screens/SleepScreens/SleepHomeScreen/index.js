@@ -60,6 +60,11 @@ const SleepHomeScreen = (props) => {
     },
   ]);
 
+  const navigateToDetails = () => {
+    console.log(props.route.params.sleepDetails);
+    props.navigation.navigate(props.route.params.sleepDetails);
+  };
+
   return (
     <Component
       cardOfDay={cardOfDay}
@@ -67,6 +72,7 @@ const SleepHomeScreen = (props) => {
       cardsRecommended={cardsRecommended}
       filterActive={filterActive}
       setActiveFilter={setActiveFilter}
+      navigateToDetails={navigateToDetails}
       {...props}
     />
   );
