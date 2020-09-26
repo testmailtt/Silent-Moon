@@ -61,8 +61,11 @@ const SleepHomeScreen = (props) => {
   ]);
 
   const navigateToDetails = () => {
-    console.log(props.route.params.sleepDetails);
     props.navigation.navigate(props.route.params.sleepDetails);
+  };
+
+  const navigateToPlaylist = () => {
+    props.navigation.navigate(props.route.params.sleepPlaylist);
   };
 
   return (
@@ -73,6 +76,7 @@ const SleepHomeScreen = (props) => {
       filterActive={filterActive}
       setActiveFilter={setActiveFilter}
       navigateToDetails={navigateToDetails}
+      navigateToPlaylist={navigateToPlaylist}
       {...props}
     />
   );

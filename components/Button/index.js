@@ -62,15 +62,19 @@ export const ButtonWhite = ({ title, onPress, style }: Props) => (
   </TouchableOpacity>
 );
 
-export const BackButton = ({ navigation, style }: Props) => (
+export const BackButton = ({ navigation, type, style }: Props) => (
   <TouchableOpacity
     onPress={() => navigation.goBack()}
     style={[styles.backButtonContainerStyle, style]}
   >
     <Image
-      source={require('assets/images/Controls/BackButton.png')}
+      source={
+        type
+          ? require('assets/images/Controls/BackButtonSleep.png')
+          : require('assets/images/Controls/BackButton.png')
+      }
       style={styles.backButtonImageStyle}
-      resizeMode="contain"
+      resizeMode="center"
     />
   </TouchableOpacity>
 );

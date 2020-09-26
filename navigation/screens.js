@@ -14,6 +14,7 @@ import ProfileScreen from 'screens/ProfileScreen';
 import SleepGreetingScreen from 'screens/SleepScreens/SleepGreetingScreen';
 import SleepHomeScreen from 'screens/SleepScreens/SleepHomeScreen';
 import SleepDetailsScreen from 'screens/SleepScreens/SleepDetailsScreen';
+import SleepPlaylistScreen from 'screens/SleepScreens/SleepPlaylistScreen';
 
 import CourseScreen from 'screens/CourseScreen';
 
@@ -85,6 +86,10 @@ export default {
     sleep_details: {
       key: '_SLEEP_DETAILS',
       component: SleepDetailsScreen,
+    },
+    sleep_playlist: {
+      key: '_SLEEP_PLAYLIST',
+      component: SleepPlaylistScreen,
     },
   },
 };

@@ -39,6 +39,7 @@ const TabNavigator = ({ username, isNewUser }) => (
       initialParams={{
         sleepHome: screens.sleep.sleep_home.key,
         sleepDetails: screens.sleep.sleep_details.key,
+        sleepPlaylist: screens.sleep.sleep_playlist.key,
       }}
     />
     <TabStack.Screen
@@ -64,6 +65,11 @@ const AppNavigator = (props) => (
     <AppStack.Screen
       name={screens.sleep.sleep_details.key}
       component={screens.sleep.sleep_details.component}
+      options={{ headerShown: false }}
+    />
+    <AppStack.Screen
+      name={screens.sleep.sleep_playlist.key}
+      component={screens.sleep.sleep_playlist.component}
       options={{ headerShown: false }}
     />
   </AppStack.Navigator>

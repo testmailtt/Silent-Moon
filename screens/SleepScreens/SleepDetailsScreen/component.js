@@ -30,7 +30,7 @@ const SleepDetailsScreen = ({
       />
 
       <View style={styles.buttonsContainerStyle}>
-        <BackButton navigation={navigation} />
+        <BackButton navigation={navigation} type="sleep" />
         <View style={{ flexDirection: 'row' }}>
           <LikeButton style={styles.likeButtonStyle} />
           <DownloadButton />

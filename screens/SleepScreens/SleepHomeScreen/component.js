@@ -61,7 +61,11 @@ const SleepHomeScreen = ({
         ))}
       </ScrollView>
       <ScrollView>
-        <CardSleep card={cardOfDay} style={styles.cardSleepContainerStyle} />
+        <CardSleep
+          card={cardOfDay}
+          onPress={props.navigateToPlaylist}
+          style={styles.cardSleepContainerStyle}
+        />
         <View style={styles.cardSleepRecommendedStyle}>
           {cardsRecommended.map((item, index) => (
             <CardRecommended
